@@ -22,8 +22,21 @@ services:
       context: nginx
       args:
         - NGINX_VERSION=${NGINX_VERSION}
+    working_dir: /usr/share/nginx/html
     volumes:
       - ../backend:/usr/share/nginx/html
     restart: unless-stopped
     ports:
       - ${PORT_NGINX}:80
+
+  php:
+    build:
+      context: php
+      args:
+        - PHP_VERSION=${PHP_VERSION}
+        - COMPOSER_VERSION=${COMPOSER_VERSION}
+    working_dir: /usr/share/nginx/html
+    volumes:
+      - ../backend:/usr/share/nginx/html
+    command: bash -c "tail -F anything"
+#    command: bash -c "service php${PHP_VERSION}-fpm start && tail -F anything"
