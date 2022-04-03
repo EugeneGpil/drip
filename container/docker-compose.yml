@@ -4,7 +4,7 @@ services:
 
   nuxt:
     build:
-      context: nuxt
+      context: nodejs
       args:
         - ID_GROUP=${ID_GROUP}
         - ID_USER=${ID_USER}
