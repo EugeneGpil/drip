@@ -1,1 +1,0 @@
-cmd_/usr/share/nginx/html/node-v16.14.2/out/Release/obj.target/libnode_text_start.a := rm -f /usr/share/nginx/html/node-v16.14.2/out/Release/obj.target/libnode_text_start.a && ar crsT /usr/share/nginx/html/node-v16.14.2/out/Release/obj.target/libnode_text_start.a /usr/share/nginx/html/node-v16.14.2/out/Release/obj.target/node_text_start/src/large_pages/node_text_start.o

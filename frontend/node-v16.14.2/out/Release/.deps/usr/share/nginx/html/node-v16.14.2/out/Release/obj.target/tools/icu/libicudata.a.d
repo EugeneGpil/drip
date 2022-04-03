@@ -1,1 +1,0 @@
-cmd_/usr/share/nginx/html/node-v16.14.2/out/Release/obj.target/tools/icu/libicudata.a := rm -f /usr/share/nginx/html/node-v16.14.2/out/Release/obj.target/tools/icu/libicudata.a && ar crsT /usr/share/nginx/html/node-v16.14.2/out/Release/obj.target/tools/icu/libicudata.a /usr/share/nginx/html/node-v16.14.2/out/Release/obj.target/icudata/gen/icudt70_dat.o
