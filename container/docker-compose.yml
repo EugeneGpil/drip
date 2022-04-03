@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
 
-  nuxt:
+  nodejs:
     build:
       context: nodejs
       args:
