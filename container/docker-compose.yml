@@ -16,5 +16,14 @@ services:
     environment:
       - HOST=0.0.0.0
     user: "${ID_USER}:${ID_GROUP}"
+
+  nginx:
+    build:
+      context: nginx
+      args:
+        - NGINX_VERSION=${NGINX_VERSION}
+    volumes:
+      - ../backend:/usr/share/nginx/html
+    restart: unless-stopped
     ports:
-      - ${PORT_NUXT}:3000
+      - ${PORT_NGINX}:80
