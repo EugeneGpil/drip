@@ -8,6 +8,9 @@ RUN groupadd -g ${ID_GROUP} app &&\
     useradd -u ${ID_USER} -m app -g app &&\
     usermod -a -G www-data app &&\
 		apt-get update &&\
+    mkdir /var/www &&\
+		touch /var/www/.barshrc &&\
+		echo "umask 012\n" >> /var/www/.bashrc &&\
     apt-get install software-properties-common -y &&\
     add-apt-repository ppa:ondrej/php -y &&\
     apt-get update &&\
