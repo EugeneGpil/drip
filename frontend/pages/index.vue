@@ -1,95 +1,76 @@
 <template>
-  <div class="main-wrapper">
-    <div class="amount-card">
-      <div class="amount-card__amount-container">
-        <div class="amount-card__amount">100.756</div>
-        <div class="amount-card__amount-currency">DRIP</div>
+  <div class="outer-wrapper">
+    <div class="content-wrapper">
+
+      <div class="menu-container">
+        <div class="logo"></div>
+        <div class="menu-outer-item menu-outer-item1">
+          <div class="menu-inner-item">
+            <div class="menu-inner-item__logo"></div>
+            <div class="menu-inner-item__text">
+              <span class="nowrap">HELP THE</span>
+              CREATOR
+            </div>
+          </div>
+        </div>
+        <div class="menu-outer-item menu-outer-item2">
+          <div class="menu-inner-item">
+            <div class="menu-inner-item__logo"></div>
+            <div class="menu-inner-item__text">
+              <span class="nowrap">
+                ABOUT
+                <span class="menu-inner-item__bigger-text">DRIP</span>
+              </span>
+              CALCULATOR
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="card amount-card__card">
-        This is amount of DRIP to hydrate properly
+
+      <div class="content-outer-container">
+        <div class="content-inner-container">
+          <div class="content-main-block">
+            <div class="content-main-block__headline content-main-headline">
+              HYDRATION GAS FEE
+            </div>
+            <div class="main-value-container">
+              <input class="main-value-input" value="0.00213 BNB">
+              <div class="main-value-underline"></div>
+            </div>
+          </div>
+          <div class="content-pair-block-container">
+            <div class="content-pair-block">
+              <div class="content-pair-block__headline content-main-headline">DRIP PRICE</div>
+              <input class="pair-value-input" value="$ 0.0388">
+              <div class="pair-value-underline"></div>
+            </div>
+            <div class="content-pair-block">
+              <div class="content-pair-block__headline content-main-headline">BNB PRICE</div>
+              <input class="pair-value-input" value="$ 400.3029">
+              <div class="pair-value-underline"></div>
+            </div>
+          </div>
+          <div class="content-main-block">
+            <div class="content-main-block__headline content-main-headline">
+              DEPOSIT AMOUNT
+            </div>
+            <div class="main-value-container">
+              <input class="main-value-input" value="5.234 DRIP">
+              <div class="main-value-underline"></div>
+            </div>
+          </div>
+          <div class="content-main-block">
+            <div class="content-main-block__headline content-main-headline">
+              THE AMOUNT TO HYDRATE PROPERLY
+            </div>
+            <div class="main-value-big-container">
+              <div class="main-value-big-value">0.777 DRIP</div>
+            </div>
+          </div>
+        </div>
       </div>
+
     </div>
   </div>
 </template>
 
-<script>
-export default {}
-</script>
-
-<style lang="scss" scoped>
-.main-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.amount-card {
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  border-radius: 0.25rem;
-  width: 80%;
-  margin-top: 20px;
-  //noinspection CssUnknownTarget
-  background-image: url('~static/img/silas.jpg');
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 5px 10px 20px;
-
-  &__amount-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: hsla(0,0%,100%,.96);
-    font-size: 2rem;
-    text-shadow: 0 0 80px rgb(192 219 255 / 48%), 0 0 32px rgb(65 120 255 / 24%);
-
-    @media (min-width: 350px) {
-      flex-direction: row;
-    }
-
-    @media (min-width: 700px) {
-      font-size: 4rem;
-    }
-
-    @media (min-width: 1250px) {
-      font-size: 6rem;
-    }
-  }
-
-  &__amount {
-    font-family: FredokaOne, serif;
-  }
-
-  &__amount-currency {
-    font-family: Aquino, serif;
-
-    @media (min-width: 350px) {
-      margin-bottom: 6px;
-      margin-left: 5px;
-    }
-
-    @media (min-width: 700px) {
-      margin-bottom: 10px;
-    }
-
-    @media (min-width: 1250px) {
-      margin-bottom: 18px;
-    }
-  }
-
-  &__card {
-    margin-top: 5px;
-  }
-}
-
-.card {
-  background-color: rgba(0,123,255,.7);
-  font-family: Roboto, sans-serif;
-  color: #00dcff;
-  text-shadow: 2px 2px #000;
-  padding: 5px 10px 20px;
-  border-radius: 0.25rem;
-}
-</style>

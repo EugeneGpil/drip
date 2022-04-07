@@ -1,11 +1,107 @@
-@font-face {
-  font-family: 'Aquino';
-  //noinspection CssInvalidPropertyValue,CssUnknownTarget
-  src: url('~assets/fonts/AquinoDemo-511lj.f5610d09.ttf')  format('truetype'),
-}
+//@font-face {
+//  font-family: 'Aquino';
+//  //noinspection CssInvalidPropertyValue,CssUnknownTarget
+//  src: url('~assets/fonts/AquinoDemo-511lj.f5610d09.ttf')  format('truetype'),
+//}
 
 @font-face {
-  font-family: 'FredokaOne';
+  font-family: 'Aldrich';
   //noinspection CssInvalidPropertyValue,CssUnknownTarget
-  src: url('~assets/fonts/FredokaOne-Regular.ttf') format('truetype'),
+  src: url('~assets/fonts/Aldrich-Regular.ttf') format('truetype'),
+}
+
+html {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: Aldrich, serif;
+}
+
+body, #__nuxt, #__layout {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.outer-wrapper {
+  //noinspection CssUnknownTarget
+  background-image: url('~/static/img/overall_background.webp');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  flex: 1;
+  width: 100%;
+}
+
+.content-wrapper {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+}
+
+.menu-container {
+  position: relative;
+  height: 150px;
+  align-self: flex-start;
+}
+
+.logo {
+  position: absolute;
+  //noinspection CssUnknownTarget
+  background-image: url('~/static/img/logo.webp');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 150px;
+  height: 150px;
+  left: -20px;
+  top: 10px;
+}
+
+.menu-outer-item {
+  position: absolute;
+}
+
+.menu-outer-item1 {
+  top: 22px;
+  left: 80px;
+}
+
+.menu-outer-item2 {
+  top: 54px;
+  left: 65px;
+}
+
+.menu-inner-item {
+  position: relative;
+  line-height: 12px;
+  font-size: 10px;
+
+  &__logo {
+    //noinspection CssUnknownTarget
+    background-image: url('~/static/img/menu_item_logo.webp');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 20px;
+    height: 20px;
+  }
+
+  &__text {
+    position: absolute;
+    top: 17px;
+    left: 17px;
+  }
+
+  &__bigger-text {
+    font-size: 12px;
+  }
+}
+
+.nowrap {
+  white-space: nowrap;
 }
