@@ -16,6 +16,7 @@ html {
   flex-direction: column;
   align-items: center;
   font-family: Aldrich, serif;
+  text-shadow: 0 3px 3px grey;
 }
 
 body, #__nuxt, #__layout {
@@ -46,7 +47,7 @@ body, #__nuxt, #__layout {
 .menu-container {
   position: relative;
   height: 150px;
-  align-self: flex-start;
+  width: 170px;
 }
 
 .logo {
@@ -104,4 +105,94 @@ body, #__nuxt, #__layout {
 
 .nowrap {
   white-space: nowrap;
+}
+
+.content-outer-container {
+  background-color: rgba(168, 213, 255, 0.43);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 83px;
+}
+
+.content-inner-container {
+  background: rgba(94, 192, 223, 0.17);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 63px;
+  margin: 17.5px;
+  padding: 63px 22px 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.content-main-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+
+  &__headline {
+    margin-bottom: 15px;
+  }
+}
+
+.content-main-headline {
+  font-size: 12px;
+  line-height: 12px;
+  color: #0C0A0A;
+  -webkit-text-stroke-color: #107BDE;
+  -webkit-text-stroke-width: 0.70px;
+  font-weight: bold;
+}
+
+.main-value-container {
+  background-color: rgba(237, 231, 255, 0.95);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 47px;
+  width: 100%;
+  padding: 15px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main-value-input {
+  border-style: none;
+  background-color: #00000000;
+  text-align: center;
+  width: 100%;
+  text-shadow: 0 3px 3px grey;
+  padding-left: 0;
+  padding-right: 0;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.main-value-underline {
+  width: 119px;
+  border-bottom-style: solid;
+  border-bottom-color: black;
+  border-bottom-width: 1px;
+  margin-top: -2px;
+  box-shadow: 0 3px 3px grey;
+}
+
+.content-pair-block-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  margin-left: -10px;
+  margin-right: -10px;
+}
+
+.content-pair-block {
+  background: rgba(237, 231, 255, 0.95);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 47px;
+  margin-left: 10px;
+  margin-right: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
