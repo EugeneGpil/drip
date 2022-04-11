@@ -2,6 +2,7 @@
 
 namespace App\Ship\Kernels;
 
+use App\Containers\AppSection\TestContainer\UI\CLI\Commands\TestCommand;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as LaravelConsoleKernel;
 
@@ -26,7 +27,7 @@ class ConsoleKernel extends LaravelConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        // $schedule->command('inspire')->hourly();
+        $schedule->command(TestCommand::class)->everyMinute();
     }
 
     /**

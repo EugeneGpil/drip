@@ -59,3 +59,14 @@ services:
     ports:
       - ${PORT_MYSQL}:3306
     working_dir: /usr/share/nginx/html
+
+  cron:
+    build:
+      context: cron
+      args:
+        - PHP_VERSION=${PHP_VERSION}
+    working_dir: /usr/share/nginx/html
+    volumes:
+      - ../backend:/usr/share/nginx/html
+      - ./cron/log:/var/log
+    command: bash -c "cron && tail -F anything"
