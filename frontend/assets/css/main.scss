@@ -125,9 +125,25 @@ body, #__nuxt, #__layout {
   background-color: rgba(168, 213, 255, 0.43);
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 83px;
+  margin-left: 10px;
+  margin-right: 10px;
 
-  @media (min-width: 450px) {
+  @media (min-width: 300px) {
     border-radius: 100px;
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+
+  @media (min-width: 350px) {
+    border-radius: 120px;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  @media (min-width: 400px) {
+    border-radius: 100px;
+    margin-left: 25px;
+    margin-right: 25px;
   }
 }
 
@@ -141,10 +157,20 @@ body, #__nuxt, #__layout {
   flex-direction: column;
   align-items: center;
 
-  @media (min-width: 450px) {
-    margin: 20px 22px 30px;
-    padding: 60px 35px 66px;
+  @media (min-width: 300px) {
     border-radius: 100px;
+  }
+
+  @media (min-width: 350px) {
+    border-radius: 120px;
+    padding-top: 60px;
+    padding-bottom: 80px;
+  }
+
+  @media (min-width: 400px) {
+    border-radius: 100px;
+    padding: 60px 35px 66px;
+    margin: 20px 22px 30px;
   }
 
   &__block {
@@ -254,7 +280,7 @@ body, #__nuxt, #__layout {
 .content-pair-block-headline {
   font-size: 10px;
 
-  @media (min-width: 350px) {
+  @media (min-width: 400px) {
     font-size: 12px;
   }
 
@@ -267,6 +293,10 @@ body, #__nuxt, #__layout {
   font-size: 12px;
 
   @media (min-width: 300px) {
+    font-size: 14px;
+  }
+
+  @media (min-width: 400px) {
     font-size: unset;
   }
 }
