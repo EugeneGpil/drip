@@ -35,13 +35,15 @@ RUN groupadd -g ${ID_GROUP} app &&\
 
 ARG INSTALL_XDEBUG=false
 ARG PHP_VERSION=8.1
-ARG PORT_XDEBUG=9050
+ARG PORT_XDEBUG=9051
+ARG DOCKERHOST=172.17.0.1
 RUN if [ "$INSTALL_XDEBUG" = "true" ] ; then \
         apt-get install php${PHP_VERSION}-xdebug -y && \
         echo "\n\
-            xdebug.remote_autostart = 1 \n\
-            xdebug.remote_enable = 1 \n\
-            xdebug.remote_port = ${PORT_XDEBUG} \n\
+            xdebug.client_host=${DOCKERHOST}  \n\
+            xdebug.client_port=${PORT_XDEBUG} \n\
+            xdebug.mode=debug \n\
+            xdebug.start_with_request=1 \n\
         " >> /etc/php/${PHP_VERSION}/fpm/conf.d/20-xdebug.ini && \
         echo "\n\
             zend_extension=xdebug \n\

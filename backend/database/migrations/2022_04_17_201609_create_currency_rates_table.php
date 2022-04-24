@@ -16,7 +16,7 @@ class CreateCurrencyRatesTable extends Migration
         Schema::create('currency_rates', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('currency_from_id');
-            $table->float('rate');
+            $table->double('rate', 20, 10);
             $table->unsignedBigInteger('currency_to_id');
             $table->timestamps();
 

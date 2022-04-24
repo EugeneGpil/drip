@@ -26,6 +26,7 @@ class CreateBaseCurrencies extends Migration
 
         $drip = $defaults;
         $drip['name'] = 'drip';
+
         DB::table('currencies')->insert([$usd, $bnb, $drip]);
     }
 
