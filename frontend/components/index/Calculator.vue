@@ -12,18 +12,7 @@
         text="DEPOSIT AMOUNT"
         currency="DRIP"
       />
-      <div class="content-main-block content-inner-container__block">
-        <div class="main-value-container main-value-result-container">
-          <div class="
-                main-value-result-container__headline
-                content-main-headline
-                main-value-result-headline
-              ">
-            THE AMOUNT TO HYDRATE PROPERLY
-          </div>
-          <div class="value-result">0.777 DRIP</div>
-        </div>
-      </div>
+      <MainResultBlock/>
     </div>
   </div>
 </template>
@@ -32,11 +21,13 @@
 <script>
 import MainInputBlock from '@/components/index/Calculator/MainInputBlock'
 import PairBlock from '@/components/index/Calculator/PairBlock'
+import MainResultBlock from '@/components/index/Calculator/MainResultBlock'
 
 export default {
   components: {
     MainInputBlock,
-    PairBlock
+    PairBlock,
+    MainResultBlock,
   },
 
   computed: {
