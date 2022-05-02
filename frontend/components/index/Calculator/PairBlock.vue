@@ -27,7 +27,7 @@ export default {
         return this.$store.state.Calculator.dripRate
       },
       set(dripRate) {
-        this.$store.commit('Calculator/set', ['dripRate', dripRate])
+        this.$store.dispatch('Calculator/editDripRate', dripRate)
       },
     },
     bnbRate: {
@@ -35,7 +35,7 @@ export default {
         return this.$store.state.Calculator.bnbRate
       },
       set(bnbRate) {
-        this.$store.commit('Calculator/set', ['bnbRate', bnbRate])
+        this.$store.dispatch('Calculator/editBnbRate', bnbRate)
       },
     },
   },

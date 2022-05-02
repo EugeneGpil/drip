@@ -62,6 +62,11 @@ export default {
   mounted() {
     this.$store.dispatch('Calculator/getDepositAmount')
     this.$store.dispatch('Calculator/getHydrationGasFee')
+    this.$store.dispatch('Calculator/startUpdateRatesInterval')
+  },
+
+  beforeDestroy() {
+    this.$store.dispatch('Calculator/clearUpdateRatesInterval')
   },
 }
 </script>

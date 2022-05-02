@@ -4,6 +4,8 @@ import getCurrencyRate from '@/assets/actions/getCurrencyRate'
 import getFromLocalStorage from '@/assets/actions/getFromLocalStorage'
 import setWithLocalStorage from '@/assets/actions/setWithLocalStorage'
 
+let updateRateInterval
+
 // noinspection JSUnusedGlobalSymbols
 export default {
   async getBnbRate({commit}) {
@@ -68,4 +70,29 @@ export default {
       state_property: 'hydrationGasFee',
     })
   },
+
+  startUpdateRatesInterval({state, dispatch}) {
+    updateRateInterval = setInterval(() => {
+      if (!state.wasDripRateEdited) {
+        dispatch('getDripRate')
+      }
+      if (!state.wasBnbRateEdited) {
+        dispatch('getBnbRate')
+      }
+    }, 1000 * 60 * 5)
+  },
+
+  clearUpdateRatesInterval() {
+    clearInterval(updateRateInterval)
+  },
+
+  editBnbRate({commit}, bnbRate) {
+    commit('set', ['bnbRate', bnbRate])
+    commit('set', ['wasBnbRateEdited', true])
+  },
+
+  editDripRate({commit}, dripRate) {
+    commit('set', ['dripRate', dripRate])
+    commit('set', ['wasDripRateEdited', true])
+  }
 }

@@ -7,6 +7,8 @@ export const state = () => ({
   dripRate: 35,
   hydrationGasFee: 0.0025,
   depositAmount: 10,
+  wasBnbRateEdited: false,
+  wasDripRateEdited: false,
 })
 
 export const mutations = {
