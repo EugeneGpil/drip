@@ -44,6 +44,8 @@ services:
     volumes:
       - ../backend:/usr/share/nginx/html
     command: bash -c "service php${PHP_VERSION}-fpm start && tail -F anything"
+    environment:
+      PHP_IDE_CONFIG: "serverName=${PHP_IDE_CONFIG_SERVER_NAME}"
 
   mysql:
     build:

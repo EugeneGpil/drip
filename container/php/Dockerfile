@@ -51,6 +51,6 @@ RUN if [ "$INSTALL_XDEBUG" = "true" ] ; then \
             xdebug.client_port=${PORT_XDEBUG} \n\
             xdebug.discover_client_host=1 \n\
             xdebug.client_host=localhost \n\
-            xdebug.start_with_request=yes \n\
+            xdebug.start_with_request=1 \n\
         " >> /etc/php/${PHP_VERSION}/cli/php.ini \
     ; fi
