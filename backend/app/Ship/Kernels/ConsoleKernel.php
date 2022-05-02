@@ -2,7 +2,7 @@
 
 namespace App\Ship\Kernels;
 
-use App\Containers\AppSection\TestContainer\UI\CLI\Commands\TestCommand;
+use App\Containers\AppSection\CurrencyRateContainer\UI\CLI\Commands\UpdateUsdToBnbRateCommand;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as LaravelConsoleKernel;
 
@@ -27,7 +27,8 @@ class ConsoleKernel extends LaravelConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        $schedule->command(TestCommand::class)->everyMinute();
+        $schedule->command(UpdateUsdToBnbRateCommand::class)
+            ->everyFiveMinutes();
     }
 
     /**
