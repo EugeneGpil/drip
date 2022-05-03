@@ -2,9 +2,15 @@
   <div class="content-outer-container">
     <div class="content-inner-container">
       <MainResultBlock
-        value="999D 12H 59M"
+        :value="`${daysToHydrate}D ${hoursToHydrate}H ${minutesToHydrate}M`"
+        :isInfoVisible="true"
         title="INTERVAL TO HYDRATE"
-      />
+      >
+        <div class="modal-headline">INTERVAL TO HYDRATE:</div>
+        <div>{{ daysToHydrate }} DAYS</div>
+        <div>{{ hoursToHydrate }} HOURS</div>
+        <div>{{ minutesToHydrate }} MINUTES</div>
+      </MainResultBlock>
     </div>
   </div>
 </template>
@@ -18,5 +24,17 @@ export default {
   components: {
     MainResultBlock,
   },
+
+  computed: {
+    daysToHydrate() {
+      return this.$store.getters['Calculator/daysToHydrate']
+    },
+    hoursToHydrate() {
+      return this.$store.getters['Calculator/hoursToHydrate']
+    },
+    minutesToHydrate() {
+      return this.$store.getters['Calculator/minutesToHydrate']
+    }
+  }
 }
 </script>

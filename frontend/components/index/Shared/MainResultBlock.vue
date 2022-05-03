@@ -7,13 +7,25 @@
         main-value-result-headline
       ">
         {{ title }}
+        <font-awesome-icon
+          v-if="isInfoVisible"
+          icon="circle-info"
+          class="content-main-headline__info-icon"
+          @click="openModal"
+        />
       </div>
       <div class="value-result">{{ value }}</div>
     </div>
+    <Modal v-if="isIntervalModalOpen" @close="closeModal">
+      <slot/>
+    </Modal>
   </div>
 </template>
 
+<!--suppress NpmUsedModulesInstalled -->
 <script>
+import Modal from '@/components/layout/Modal'
+
 // noinspection JSUnusedGlobalSymbols
 export default {
   props: {
@@ -25,6 +37,30 @@ export default {
       type: String,
       required: true,
     },
+    isInfoVisible: {
+      type: Boolean,
+      required: false,
+      default: false,
+    },
   },
+
+  components: {
+    Modal,
+  },
+
+  computed: {
+    isIntervalModalOpen() {
+      return this.$store.state.isIntervalModalOpen
+    },
+  },
+
+  methods: {
+    closeModal() {
+      this.$store.commit('set', ['isIntervalModalOpen', false])
+    },
+    openModal() {
+      this.$store.commit('set', ['isIntervalModalOpen', true])
+    },
+  }
 }
 </script>
