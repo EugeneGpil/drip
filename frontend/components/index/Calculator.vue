@@ -12,7 +12,10 @@
         text="DEPOSIT AMOUNT"
         currency="DRIP"
       />
-      <MainResultBlock/>
+      <MainResultBlock
+        :value="`${amountToHydrate} DRIP`"
+        title="AMOUNT TO HYDRATE PROPERLY"
+      />
     </div>
   </div>
 </template>
@@ -21,7 +24,7 @@
 <script>
 import MainInputBlock from '@/components/index/Calculator/MainInputBlock'
 import PairBlock from '@/components/index/Calculator/PairBlock'
-import MainResultBlock from '@/components/index/Calculator/MainResultBlock'
+import MainResultBlock from '@/components/index/Shared/MainResultBlock'
 
 export default {
   components: {
@@ -36,6 +39,9 @@ export default {
     },
     dripRate() {
       return this.$store.state.Calculator.dripRate
+    },
+    amountToHydrate() {
+      return this.$store.getters['Calculator/amountToHydrate']
     },
     hydrationGasFee: {
       get() {

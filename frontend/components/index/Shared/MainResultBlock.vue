@@ -6,9 +6,9 @@
         content-main-headline
         main-value-result-headline
       ">
-        THE AMOUNT TO HYDRATE PROPERLY
+        {{ title }}
       </div>
-      <div class="value-result">{{ amountToHydrate }} DRIP</div>
+      <div class="value-result">{{ value }}</div>
     </div>
   </div>
 </template>
@@ -16,9 +16,14 @@
 <script>
 // noinspection JSUnusedGlobalSymbols
 export default {
-  computed: {
-    amountToHydrate() {
-      return this.$store.getters['Calculator/amountToHydrate']
+  props: {
+    value: {
+      type: String,
+      required: true,
+    },
+    title: {
+      type: String,
+      required: true,
     },
   },
 }

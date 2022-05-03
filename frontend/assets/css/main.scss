@@ -39,7 +39,7 @@ body, #__nuxt, #__layout {
   padding-bottom: 25px;
 
   @media (min-width: 750px) {
-    padding-top: 25px;
+    margin-top: 15px;
   }
 }
 
@@ -72,9 +72,11 @@ body, #__nuxt, #__layout {
   position: relative;
   height: 150px;
   width: 170px;
+  margin-bottom: -15px;
 
   @media (min-width: 750px) {
     margin-top: 40vh;
+    margin-bottom: 0;
   }
 }
 
@@ -248,8 +250,9 @@ body, #__nuxt, #__layout {
   background-color: rgba(168, 213, 255, 0.43);
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 83px;
-  margin-left: 10px;
-  margin-right: 10px;
+  margin: 15px 10px;
+  min-width: 90%;
+  max-width: 484.4px;
 
   @media (min-width: 300px) {
     border-radius: 100px;
@@ -259,6 +262,10 @@ body, #__nuxt, #__layout {
 
   @media (min-width: 350px) {
     border-radius: 100px;
+  }
+
+  @media (min-width: 500px) {
+    min-width: 484.4px;
   }
 }
 
@@ -453,10 +460,12 @@ body, #__nuxt, #__layout {
 
   @media (min-width: 500px) {
     font-size: 15px;
+    line-height: 14px;
   }
 
   @media (min-width: 550px) {
     font-size: 16px;
+    line-height: 15px;
   }
 }
 
