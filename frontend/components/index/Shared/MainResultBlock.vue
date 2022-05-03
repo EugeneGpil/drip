@@ -11,12 +11,12 @@
           v-if="isInfoVisible"
           icon="circle-info"
           class="content-main-headline__info-icon"
-          @click="openModal"
+          @click="$emit('setIsModalOpen', true)"
         />
       </div>
       <div class="value-result">{{ value }}</div>
     </div>
-    <Modal v-if="isIntervalModalOpen" @close="closeModal">
+    <Modal v-if="isModalOpen" @close="$emit('setIsModalOpen', false)">
       <slot/>
     </Modal>
   </div>
@@ -42,25 +42,15 @@ export default {
       required: false,
       default: false,
     },
+    isModalOpen: {
+      type: Boolean,
+      required: false,
+      default: false,
+    }
   },
 
   components: {
     Modal,
   },
-
-  computed: {
-    isIntervalModalOpen() {
-      return this.$store.state.isIntervalModalOpen
-    },
-  },
-
-  methods: {
-    closeModal() {
-      this.$store.commit('set', ['isIntervalModalOpen', false])
-    },
-    openModal() {
-      this.$store.commit('set', ['isIntervalModalOpen', true])
-    },
-  }
 }
 </script>
