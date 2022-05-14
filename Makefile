@@ -10,6 +10,9 @@ install-net-tools:
 exec-php:
 	cd container && docker-compose exec --user www-data php bash
 
+exec-php-app:
+	cd container && docker-compose exec php bash
+
 composer-install:
 	cd container && docker-compose run --rm --user app php composer install
 

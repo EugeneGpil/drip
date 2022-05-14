@@ -71,5 +71,4 @@ services:
     working_dir: /usr/share/nginx/html
     volumes:
       - ../backend:/usr/share/nginx/html
-      - ./cron/log:/var/log
     command: bash -c "cron && tail -F anything"
