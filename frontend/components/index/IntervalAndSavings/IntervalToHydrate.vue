@@ -2,9 +2,7 @@
   <MainResultBlock
     :value="`${daysToHydrate}D ${hoursToHydrate}H ${minutesToHydrate}M`"
     :isInfoVisible="true"
-    :isModalOpen="isIntervalModalOpen"
     title="INTERVAL TO HYDRATE"
-    @setIsModalOpen="setIsModalOpen"
   >
     <div class="modal-headline">INTERVAL TO HYDRATE:</div>
     <div>{{ daysToHydrate }} DAYS</div>
@@ -25,23 +23,14 @@ export default {
 
   computed: {
     daysToHydrate() {
-      return this.$store.getters['Calculator/daysToHydrate']
+      return this.$store.getters['IntervalAndSavings/daysToHydrate']
     },
     hoursToHydrate() {
-      return this.$store.getters['Calculator/hoursToHydrate']
+      return this.$store.getters['IntervalAndSavings/hoursToHydrate']
     },
     minutesToHydrate() {
-      return this.$store.getters['Calculator/minutesToHydrate']
-    },
-    isIntervalModalOpen() {
-      return this.$store.state.isIntervalModalOpen
+      return this.$store.getters['IntervalAndSavings/minutesToHydrate']
     },
   },
-
-  methods: {
-    setIsModalOpen(isModalOpen) {
-      this.$store.commit('set', ['isIntervalModalOpen', isModalOpen])
-    }
-  }
 }
 </script>

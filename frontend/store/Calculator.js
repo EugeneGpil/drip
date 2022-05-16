@@ -1,4 +1,4 @@
-// noinspection NpmUsedModulesInstalled
+// noinspection NpmUsedModulesInstalled,JSUnusedGlobalSymbols
 
 import calculatorActions from '@/assets/store/Calculator/actions'
 import calculatorGetters from '@/assets/store/Calculator/getters'

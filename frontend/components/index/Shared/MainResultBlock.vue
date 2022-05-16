@@ -11,12 +11,12 @@
           v-if="isInfoVisible"
           icon="circle-info"
           class="content-main-headline__info-icon"
-          @click="$emit('setIsModalOpen', true)"
+          @click="isModalVisible = true"
         />
       </div>
       <div class="value-result">{{ value }}</div>
     </div>
-    <Modal v-if="isModalOpen" @close="$emit('setIsModalOpen', false)">
+    <Modal v-if="isModalVisible" @close="isModalVisible = false">
       <slot/>
     </Modal>
   </div>
@@ -42,15 +42,16 @@ export default {
       required: false,
       default: false,
     },
-    isModalOpen: {
-      type: Boolean,
-      required: false,
-      default: false,
-    }
   },
 
   components: {
     Modal,
+  },
+
+  data() {
+    return {
+      isModalVisible: false,
+    }
   },
 }
 </script>
