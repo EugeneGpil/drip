@@ -34,4 +34,18 @@ export default {
     const fullHoursToHydrate = getFullHoursToHydrate(depositAmount, amountToHydrate)
     return fullMinutesToHydrate - fullHoursToHydrate * 60;
   },
+
+  savedInUsd(state, getters, rootState) {
+    const daysToHydrate = getters.daysToHydrate
+    const bnbPrice = rootState.Calculator.bnbRate
+    const gasFee = rootState.Calculator.hydrationGasFee
+    const gasFeeInUsd = gasFee * bnbPrice
+    const allDaysGasFeeInUsd = daysToHydrate * gasFeeInUsd
+    return allDaysGasFeeInUsd / 100 * 90
+  },
+
+  savedInDrip(state, getters, rootState) {
+    const dripPrice = rootState.Calculator.dripRate
+    return getters.savedInUsd / dripPrice
+  }
 }

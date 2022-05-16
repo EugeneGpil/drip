@@ -3,8 +3,14 @@
     <div class="content-inner-container">
       <IntervalToHydrate/>
       <div class="additional-info-container">
-        <AdditionalInfoBlock text="saving on gas" value="$ 343.54"/>
-        <AdditionalInfoBlock text="this equal to" value="143.239 DRIP"/>
+        <AdditionalInfoBlock
+          :value="`$ ${savedInUsd}`"
+          text="saved in usd"
+        />
+        <AdditionalInfoBlock
+          :value="`${savedInDrip} DRIP`"
+          text="saved in drip"
+        />
       </div>
     </div>
   </div>
@@ -20,6 +26,15 @@ export default {
   components: {
     IntervalToHydrate,
     AdditionalInfoBlock,
+  },
+
+  computed: {
+    savedInUsd() {
+      return this.$store.getters['IntervalAndSavings/savedInUsd']
+    },
+    savedInDrip() {
+      return this.$store.getters['IntervalAndSavings/savedInDrip']
+    },
   },
 }
 </script>
