@@ -13,7 +13,7 @@
 
 <script>
 // noinspection NpmUsedModulesInstalled
-import PairedBlock from '@/components/index/Calculator/PairBlock/PairedBlock'
+import PairedBlock from '@/components/index/Calculator/Shared/PairedBlock'
 
 // noinspection JSUnusedGlobalSymbols
 export default {

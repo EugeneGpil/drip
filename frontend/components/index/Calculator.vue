@@ -1,17 +1,9 @@
 <template>
   <div class="content-outer-container">
     <div class="content-inner-container">
-      <MainInputBlock
-        v-model="hydrationGasFee"
-        text="HYDRATION GAS FEE"
-        currency="BNB"
-      />
+      <HydrationGasFee/>
       <PairBlock/>
-      <MainInputBlock
-        v-model="depositAmount"
-        text="DEPOSIT AMOUNT"
-        currency="DRIP"
-      />
+      <DepositAmount/>
       <MainResultBlock
         :value="`${amountToHydrate} DRIP`"
         title="AMOUNT TO HYDRATE PROPERLY"
@@ -22,42 +14,23 @@
 
 <!--suppress NpmUsedModulesInstalled -->
 <script>
-import MainInputBlock from '@/components/index/Calculator/MainInputBlock'
 import PairBlock from '@/components/index/Calculator/PairBlock'
 import MainResultBlock from '@/components/index/Shared/MainResultBlock'
+import HydrationGasFee from '@/components/index/Calculator/HydrationGasFee'
+import DepositAmount from '@/components/index/Calculator/DepositAmount'
 
+// noinspection JSUnusedGlobalSymbols
 export default {
   components: {
-    MainInputBlock,
+    HydrationGasFee,
     PairBlock,
+    DepositAmount,
     MainResultBlock,
   },
 
   computed: {
-    bnbRate() {
-      return this.$store.state.Calculator.bnbRate
-    },
-    dripRate() {
-      return this.$store.state.Calculator.dripRate
-    },
     amountToHydrate() {
       return this.$store.getters['Calculator/amountToHydrate']
-    },
-    hydrationGasFee: {
-      get() {
-        return this.$store.state.Calculator.hydrationGasFee
-      },
-      set(hydrationGasFee) {
-        this.$store.dispatch('Calculator/setHydrationGasFee', hydrationGasFee)
-      },
-    },
-    depositAmount: {
-      get() {
-        return this.$store.state.Calculator.depositAmount
-      },
-      set(depositAmount) {
-        this.$store.dispatch('Calculator/setDepositAmount', depositAmount)
-      },
     },
   },
 
