@@ -3,14 +3,8 @@
     <div class="content-inner-container">
       <IntervalToHydrate/>
       <div class="additional-info-container">
-        <AdditionalInfoBlock
-          :value="`$ ${savedInUsd}`"
-          text="saved in usd"
-        />
-        <AdditionalInfoBlock
-          :value="`${savedInDrip} DRIP`"
-          text="saved in drip"
-        />
+        <SavedInUsd/>
+        <SavedInDrip/>
       </div>
     </div>
   </div>
@@ -19,22 +13,15 @@
 <!--suppress NpmUsedModulesInstalled -->
 <script>
 import IntervalToHydrate from '@/components/index/IntervalAndSavings/IntervalToHydrate'
-import AdditionalInfoBlock from '@/components/index/IntervalAndSavings/AdditionalInfoBlock'
+import SavedInUsd from '@/components/index/IntervalAndSavings/SavedInUsd'
+import SavedInDrip from '@/components/index/IntervalAndSavings/SavedInDrip'
 
 // noinspection JSUnusedGlobalSymbols
 export default {
   components: {
     IntervalToHydrate,
-    AdditionalInfoBlock,
-  },
-
-  computed: {
-    savedInUsd() {
-      return this.$store.getters['IntervalAndSavings/savedInUsd']
-    },
-    savedInDrip() {
-      return this.$store.getters['IntervalAndSavings/savedInDrip']
-    },
+    SavedInUsd,
+    SavedInDrip,
   },
 }
 </script>
