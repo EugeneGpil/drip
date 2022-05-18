@@ -45,3 +45,40 @@ export default {
 }
 </script>
 
+<style lang="scss" scoped>
+.content-pair-block-headline {
+  font-size: 10px;
+
+  @media (min-width: 400px) {
+    font-size: 12px;
+  }
+
+  @media (min-width: 450px) {
+    font-size: 16px;
+  }
+}
+
+.content-pair-block-input {
+  font-size: 12px;
+
+  @media (min-width: 300px) {
+    font-size: 13px;
+  }
+
+  @media (min-width: 400px) {
+    font-size: unset;
+  }
+}
+
+.pair-value-underline {
+  width: 50px;
+
+  @media (min-width: 350px) {
+    width: 60px;
+  }
+
+  @media (min-width: 450px) {
+    width: 85px;
+  }
+}
+</style>

@@ -25,3 +25,13 @@ export default {
   },
 }
 </script>
+
+<style lang="scss" scoped>
+.additional-info-container {
+  width: 100%;
+
+  @media (min-width: 350px) {
+    margin-top: 5px;
+  }
+}
+</style>

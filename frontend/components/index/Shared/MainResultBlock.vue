@@ -55,3 +55,57 @@ export default {
   },
 }
 </script>
+
+<style lang="scss" scoped>
+.main-value-result-container {
+  padding-top: 19px;
+
+  &__headline {
+    margin-bottom: 10px;
+  }
+
+  @media (min-width: 450px) {
+    padding-top: 35px;
+    padding-bottom: 20px;
+  }
+}
+
+.main-value-result-headline {
+  font-size: 10px;
+  max-width: 90%;
+
+  @media (min-width: 350px) {
+    font-size: 12px;
+  }
+
+  @media (min-width: 450px) {
+    font-size: 13px;
+  }
+
+  @media (min-width: 500px) {
+    font-size: 15px;
+    line-height: 14px;
+  }
+
+  @media (min-width: 550px) {
+    font-size: 16px;
+    line-height: 15px;
+  }
+}
+
+.value-result {
+  font-size: 18px;
+
+  @media (min-width: 300px) {
+    font-size: 20px;
+  }
+
+  @media (min-width: 350px) {
+    font-size: 25px;
+  }
+
+  @media (min-width: 450px) {
+    font-size: 30px;
+  }
+}
+</style>
