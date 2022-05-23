@@ -67,9 +67,7 @@ export default {
 
   fontawesome: {
     icons: {
-      solid: [
-        'faCircleInfo',
-      ],
+      solid: [],
     },
   }
 }

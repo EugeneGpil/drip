@@ -1,18 +1,18 @@
 <template>
   <div class="content-main-block content-inner-container__block">
     <div class="main-value-container main-value-result-container">
-      <div class="
-        main-value-result-container__headline
-        content-main-headline
-        main-value-result-headline
-      ">
+      <div
+        :class="{
+          'content-main-headline-with-info': isInfoVisible,
+        }"
+        class="
+          main-value-result-container__headline
+          content-main-headline
+          main-value-result-headline
+        "
+        @click="isModalVisible = isInfoVisible"
+      >
         {{ title }}
-        <font-awesome-icon
-          v-if="isInfoVisible"
-          icon="circle-info"
-          class="content-main-headline__info-icon"
-          @click="isModalVisible = true"
-        />
       </div>
       <div class="value-result">{{ value }}</div>
     </div>

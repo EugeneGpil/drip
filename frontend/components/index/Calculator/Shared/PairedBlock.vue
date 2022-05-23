@@ -1,10 +1,14 @@
 <template>
   <div class="content-pair-block">
-    <div class="
+    <div
+      class="
                 content-pair-block__headline
                 content-main-headline
                 content-pair-block-headline
-              ">
+                content-main-headline-with-info
+              "
+      @click="isModalVisible = true"
+    >
       {{ text }}
     </div>
     <input
@@ -12,11 +16,16 @@
       class="main-value-input content-pair-block-input"
     >
     <div class="main-value-underline pair-value-underline"></div>
+    <Modal v-if="isModalVisible" @close="isModalVisible = false">
+      <slot/>
+    </Modal>
   </div>
 </template>
 
+<!--suppress NpmUsedModulesInstalled -->
 <script>
-// noinspection NpmUsedModulesInstalled
+import Modal from '@/components/layout/Modal'
+
 import stringToFloat from '@/assets/converters/stringToFloat'
 
 // noinspection JSUnusedGlobalSymbols
@@ -32,6 +41,10 @@ export default {
     },
   },
 
+  components: {
+    Modal,
+  },
+
   computed: {
     inputValue: {
       get() {
@@ -40,8 +53,14 @@ export default {
       set(inputValue) {
         this.$emit('input', stringToFloat(inputValue))
       },
+    },
+  },
+
+  data() {
+    return {
+      isModalVisible: false,
     }
-  }
+  },
 }
 </script>
 

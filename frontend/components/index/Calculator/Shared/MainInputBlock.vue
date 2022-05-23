@@ -1,12 +1,14 @@
 <template>
   <div class="content-main-block content-inner-container__block">
-    <div class="content-main-block__headline content-main-headline">
+    <div
+      class="
+        content-main-block__headline
+        content-main-headline
+        content-main-headline-with-info
+      "
+      @click="isModalVisible = true"
+    >
       {{ text }}
-      <font-awesome-icon
-        icon="circle-info"
-        class="content-main-headline__info-icon"
-        @click="isModalVisible = true"
-      />
     </div>
     <div class="main-value-container">
       <input
