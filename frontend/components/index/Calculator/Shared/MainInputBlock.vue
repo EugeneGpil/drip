@@ -2,6 +2,11 @@
   <div class="content-main-block content-inner-container__block">
     <div class="content-main-block__headline content-main-headline">
       {{ text }}
+      <font-awesome-icon
+        icon="circle-info"
+        class="content-main-headline__info-icon"
+        @click="isModalVisible = true"
+      />
     </div>
     <div class="main-value-container">
       <input
@@ -11,11 +16,16 @@
       >
       <div class="main-value-underline"></div>
     </div>
+    <Modal v-if="isModalVisible" @close="isModalVisible = false">
+      <slot/>
+    </Modal>
   </div>
 </template>
 
 <!--suppress NpmUsedModulesInstalled -->
 <script>
+import Modal from '@/components/layout/Modal'
+
 import stringToFloat from '@/assets/converters/stringToFloat'
 
 // noinspection JSUnusedGlobalSymbols
@@ -33,6 +43,16 @@ export default {
       type: Number,
       required: true,
     },
+  },
+
+  components: {
+    Modal,
+  },
+
+  data() {
+    return {
+      isModalVisible: false,
+    }
   },
 
   computed: {
