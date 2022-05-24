@@ -1,11 +1,22 @@
 <template>
   <div class="additional-info-block">
-    <div class="additional-info-text">{{ text }}</div>
+    <div
+      class="additional-info-text content-main-headline-with-info"
+      @click="isModalVisible = true"
+    >
+      {{ text }}
+    </div>
     <div class="additional-info-value">{{ value }}</div>
+    <Modal v-if="isModalVisible" @close="isModalVisible = false">
+      <slot/>
+    </Modal>
   </div>
 </template>
 
+<!--suppress NpmUsedModulesInstalled -->
 <script>
+import Modal from '@/components/layout/Modal'
+
 // noinspection JSUnusedGlobalSymbols
 export default {
   props: {
@@ -17,7 +28,17 @@ export default {
       type: String,
       required: true,
     },
-  }
+  },
+
+  components: {
+    Modal,
+  },
+
+  data() {
+    return {
+      isModalVisible: false,
+    }
+  },
 }
 </script>
 
