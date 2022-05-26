@@ -18,6 +18,7 @@ export default {
       {hid: 'author', name: 'author', content: 'gpilligrim@gmail.com'},
       {hid: 'og:url', name: 'og:url', content: process.env.SITE_URL},
       {hid: 'og:title', name: 'og:title', content: title},
+      {name: 'google-site-verification', content: process.env.GOOGLE_SITE_VERIFICATION},
     ],
     link: [
       {rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'}
