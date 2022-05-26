@@ -1,16 +1,23 @@
+const title = 'DRIP hydration calculator'
+const description = 'This drip calculator shows the fastest interval you can hydrate with, without wasting money on gas fees.'
+
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'DRIP calculator',
+    title,
     htmlAttrs: {
       lang: 'en'
     },
     meta: [
       {charset: 'utf-8'},
       {name: 'viewport', content: 'width=device-width, initial-scale=1'},
-      {hid: 'description', name: 'description', content: ''},
+      {hid: 'description', name: 'description', content: description},
+      {hid: 'og:description', name: 'og:description', content: description},
       {name: 'format-detection', content: 'telephone=no'},
       {name: 'theme-color', content: '#F1CCE4'},
+      {hid: 'author', name: 'author', content: 'gpilligrim@gmail.com'},
+      {hid: 'og:url', name: 'og:url', content: process.env.SITE_URL},
+      {hid: 'og:title', name: 'og:title', content: title},
     ],
     link: [
       {rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'}

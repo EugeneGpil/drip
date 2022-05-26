@@ -1,10 +1,11 @@
+<!--suppress HtmlUnknownTarget -->
 <template>
   <div class="menu-outer-container">
     <div class="menu-container">
-      <div class="logo"></div>
+      <img class="logo" src="~/static/img/logo.webp" alt="drip calculator logo">
       <div class="menu-outer-item menu-outer-item1">
         <div class="menu-inner-item">
-          <div class="menu-inner-item__logo"></div>
+          <img class="menu-inner-item__logo" src="~/static/img/menu_item_logo.webp" alt="menu item logo">
           <div class="menu-inner-item__text">
             <span class="nowrap">HELP THE</span>
             CREATOR
@@ -13,7 +14,7 @@
       </div>
       <div class="menu-outer-item menu-outer-item2">
         <div class="menu-inner-item">
-          <div class="menu-inner-item__logo"></div>
+          <img class="menu-inner-item__logo" src="~/static/img/menu_item_logo.webp" alt="menu item logo">
           <div class="menu-inner-item__text">
               <span class="nowrap">
                 ABOUT
@@ -67,11 +68,6 @@
 
 .logo {
   position: absolute;
-  //noinspection CssUnknownTarget
-  background-image: url('~/static/img/logo.webp');
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
   width: 150px;
   height: 150px;
   left: -20px;
@@ -185,11 +181,6 @@
   }
 
   &__logo {
-    //noinspection CssUnknownTarget
-    background-image: url('~/static/img/menu_item_logo.webp');
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
     width: 20px;
     height: 20px;
 
