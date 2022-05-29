@@ -165,3 +165,57 @@ body, #__nuxt, #__layout {
 .modal-headline {
   align-self: flex-start;
 }
+
+.text-container {
+  margin-bottom: 30px;
+
+  &__paragraph {
+    margin-bottom: 15px;
+  }
+
+  &__headline {
+    margin-bottom: 15px;
+    margin-block-start: 0;
+  }
+}
+
+.the-main-headline {
+  font-size: 16px;
+  line-height: 16px;
+
+  @media (min-width: 300px) {
+    font-size: 18px;
+    line-height: 18px;
+    -webkit-text-stroke-width: 1px;
+  }
+
+  @media (min-width: 400px) {
+    font-size: 26px;
+    line-height: 26px;
+    -webkit-text-stroke-width: 1.2px;
+  }
+}
+
+.paragraph {
+  text-align: justify;
+
+  @media (min-width: 350px) {
+    font-size: 18px;
+    line-height: 18px;
+  }
+
+  @media (min-width: 400px) {
+    font-size: 20px;
+    line-height: 20px;
+  }
+
+  @media (min-width: 450px) {
+    font-size: 22px;
+    line-height: 22px;
+  }
+}
+
+.emphasized {
+  color: #485061;
+  text-shadow: 0 3px 3px #687081;
+}

@@ -5,6 +5,7 @@
       <Calculator/>
       <IntervalAndSavings/>
       <About/>
+      <Instruction/>
     </div>
   </div>
 </template>
@@ -15,6 +16,7 @@ import Menu from '@/components/index/Menu'
 import Calculator from '@/components/index/Calculator/Calculator'
 import IntervalAndSavings from '@/components/index/IntervalAndSavings/IntervalAndSavings'
 import About from '@/components/index/About'
+import Instruction from '@/components/index/Instruction/Instruction'
 
 export default {
   components: {
@@ -22,6 +24,7 @@ export default {
     Calculator,
     IntervalAndSavings,
     About,
+    Instruction,
   },
 }
 </script>
