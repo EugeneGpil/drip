@@ -11,7 +11,7 @@
 
 <!--suppress NpmUsedModulesInstalled -->
 <script>
-import MainInputBlock from '@/components/index/Calculator/Shared/MainInputBlock'
+import MainInputBlock from '@/components/index/Calculator/shared/MainInputBlock'
 
 // noinspection JSUnusedGlobalSymbols
 export default {

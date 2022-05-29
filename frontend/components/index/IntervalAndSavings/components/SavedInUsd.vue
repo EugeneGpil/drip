@@ -13,7 +13,7 @@
 
 <!--suppress NpmUsedModulesInstalled -->
 <script>
-import AdditionalInfoBlock from '@/components/index/IntervalAndSavings/Shared/AdditionalInfoBlock'
+import AdditionalInfoBlock from '@/components/index/IntervalAndSavings/shared/AdditionalInfoBlock'
 
 // noinspection JSUnusedGlobalSymbols
 export default {

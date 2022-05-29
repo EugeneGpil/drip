@@ -14,10 +14,10 @@
 
 <!--suppress NpmUsedModulesInstalled -->
 <script>
-import PairBlock from '@/components/index/Calculator/PairBlock'
-import MainResultBlock from '@/components/index/Shared/MainResultBlock'
-import HydrationGasFee from '@/components/index/Calculator/HydrationGasFee'
-import DepositAmount from '@/components/index/Calculator/DepositAmount'
+import PairBlock from '@/components/index/Calculator/components/PairBlock'
+import MainResultBlock from '@/components/index/shared/MainResultBlock'
+import HydrationGasFee from '@/components/index/Calculator/components/HydrationGasFee'
+import DepositAmount from '@/components/index/Calculator/components/DepositAmount'
 
 // noinspection JSUnusedGlobalSymbols
 export default {

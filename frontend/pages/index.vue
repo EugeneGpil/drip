@@ -4,6 +4,7 @@
       <Menu/>
       <Calculator/>
       <IntervalAndSavings/>
+      <About/>
     </div>
   </div>
 </template>
@@ -11,14 +12,16 @@
 <!--suppress NpmUsedModulesInstalled -->
 <script>
 import Menu from '@/components/index/Menu'
-import Calculator from '@/components/index/Calculator'
-import IntervalAndSavings from '@/components/index/IntervalAndSavings'
+import Calculator from '@/components/index/Calculator/Calculator'
+import IntervalAndSavings from '@/components/index/IntervalAndSavings/IntervalAndSavings'
+import About from '@/components/index/About'
 
 export default {
   components: {
     Menu,
     Calculator,
     IntervalAndSavings,
+    About,
   },
 }
 </script>

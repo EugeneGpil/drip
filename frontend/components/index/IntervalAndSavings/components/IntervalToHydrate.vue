@@ -13,7 +13,7 @@
 
 <!--suppress NpmUsedModulesInstalled -->
 <script>
-import MainResultBlock from '@/components/index/Shared/MainResultBlock'
+import MainResultBlock from '@/components/index/shared/MainResultBlock'
 
 // noinspection JSUnusedGlobalSymbols
 export default {
