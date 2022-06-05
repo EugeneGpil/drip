@@ -1,6 +1,6 @@
 <template>
   <div class="content-main-block content-inner-container__block">
-    <div
+    <h2
       class="
         content-main-block__headline
         content-main-headline
@@ -9,7 +9,7 @@
       @click="isModalVisible = true"
     >
       {{ text }}
-    </div>
+    </h2>
     <div class="main-value-container">
       <input
         v-model="inputValue"

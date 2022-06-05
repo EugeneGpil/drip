@@ -1,11 +1,11 @@
 <template>
   <div class="additional-info-block">
-    <div
+    <h3
       class="additional-info-text content-main-headline-with-info"
       @click="isModalVisible = true"
     >
       {{ text }}
-    </div>
+    </h3>
     <div class="additional-info-value">{{ value }}</div>
     <Modal v-if="isModalVisible" @close="isModalVisible = false">
       <slot/>
@@ -69,6 +69,8 @@ export default {
   -webkit-text-stroke-color: #A5EE6B;
   -webkit-text-stroke-width: 0.60px;
   font-weight: bold;
+  margin-block-start: 0;
+  margin-block-end: 0;
 
   @media (min-width: 300px) {
     padding-left: 15px;

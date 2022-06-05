@@ -1,12 +1,12 @@
 <template>
   <div class="content-outer-container">
-    <div class="content-inner-container">
+    <section class="content-inner-container">
       <IntervalToHydrate/>
       <div class="additional-info-container">
         <SavedInUsd/>
         <SavedInDrip/>
       </div>
-    </div>
+    </section>
   </div>
 </template>
 

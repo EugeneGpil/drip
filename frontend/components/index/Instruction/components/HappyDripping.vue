@@ -1,5 +1,5 @@
 <template>
-  <div class="text-container__paragraph paragraph">
+  <p class="text-container__paragraph paragraph">
     happy DRIPping!
-  </div>
+  </p>
 </template>

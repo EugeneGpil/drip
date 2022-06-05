@@ -1,6 +1,6 @@
 <template>
   <div class="content-outer-container">
-    <div class="content-inner-container">
+    <section class="content-inner-container">
       <HydrationGasFee/>
       <PairBlock/>
       <DepositAmount/>
@@ -8,7 +8,7 @@
         :value="`${amountToHydrate} DRIP`"
         title="AMOUNT TO HYDRATE PROPERLY"
       />
-    </div>
+    </section>
   </div>
 </template>
 

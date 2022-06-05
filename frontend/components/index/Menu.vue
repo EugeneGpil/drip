@@ -1,7 +1,7 @@
 <!--suppress HtmlUnknownTarget -->
 <template>
   <div class="menu-outer-container">
-    <div class="menu-container">
+    <section class="menu-container">
       <img class="logo" src="~/static/img/logo.webp" alt="drip calculator logo">
       <div class="menu-outer-item menu-outer-item1">
         <div class="menu-inner-item">
@@ -24,7 +24,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </section>
   </div>
 </template>
 

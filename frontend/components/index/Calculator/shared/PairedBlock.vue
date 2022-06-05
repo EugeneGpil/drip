@@ -1,6 +1,6 @@
 <template>
   <div class="content-pair-block">
-    <div
+    <h2
       class="
                 content-pair-block__headline
                 content-main-headline
@@ -10,7 +10,7 @@
       @click="isModalVisible = true"
     >
       {{ text }}
-    </div>
+    </h2>
     <input
       v-model="inputValue"
       class="main-value-input content-pair-block-input"

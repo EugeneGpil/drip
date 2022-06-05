@@ -1,7 +1,7 @@
 <template>
   <div class="content-main-block content-inner-container__block">
     <div class="main-value-container main-value-result-container">
-      <div
+      <h2
         :class="{
           'content-main-headline-with-info': isInfoVisible,
         }"
@@ -13,7 +13,7 @@
         @click="isModalVisible = isInfoVisible"
       >
         {{ title }}
-      </div>
+      </h2>
       <div class="value-result">{{ value }}</div>
     </div>
     <Modal v-if="isModalVisible" @close="isModalVisible = false">
