@@ -6,7 +6,7 @@
       <IntervalAndSavings/>
       <About/>
       <Instruction/>
-      <!--      <Donation/>-->
+      <Donation/>
       <GoUp/>
     </div>
   </div>

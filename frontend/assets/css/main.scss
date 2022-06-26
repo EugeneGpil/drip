@@ -229,3 +229,20 @@ p {
   color: #485061;
   text-shadow: 0 3px 3px #687081;
 }
+
+.second-headline {
+  font-size: 14px;
+  line-height: 14px;
+
+  @media (min-width: 300px) {
+    font-size: 16px;
+    line-height: 16px;
+    -webkit-text-stroke-width: 0.9px;
+  }
+
+  @media (min-width: 400px) {
+    font-size: 22px;
+    line-height: 22px;
+    -webkit-text-stroke-width: 1px;
+  }
+}
