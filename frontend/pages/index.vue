@@ -6,6 +6,7 @@
       <IntervalAndSavings/>
       <About/>
       <Instruction/>
+      <!--      <Donation/>-->
       <GoUp/>
     </div>
   </div>
@@ -19,6 +20,7 @@ import IntervalAndSavings from '@/components/index/IntervalAndSavings/IntervalAn
 import About from '@/components/index/About'
 import Instruction from '@/components/index/Instruction/Instruction'
 import GoUp from '@/components/index/GoUp'
+import Donation from '@/components/index/Donation/Donation'
 
 export default {
   components: {
@@ -27,6 +29,7 @@ export default {
     IntervalAndSavings,
     About,
     Instruction,
+    Donation,
     GoUp
   },
 }
