@@ -6,7 +6,7 @@
       <div class="menu-outer-item menu-outer-item1">
         <div class="menu-inner-item">
           <img class="menu-inner-item__logo" src="~/static/img/menu_item_logo.webp" alt="menu item logo">
-          <div class="menu-inner-item__text">
+          <div class="menu-inner-item__text" @click="goToDonation">
             <span class="nowrap">HELP THE</span>
             CREATOR
           </div>
@@ -37,7 +37,10 @@ export default {
   methods: {
     goToAbout() {
       goToTopOfElement(document.getElementById('about'))
-    }
+    },
+    goToDonation() {
+      goToTopOfElement(document.getElementById('donation'))
+    },
   }
 }
 </script>
