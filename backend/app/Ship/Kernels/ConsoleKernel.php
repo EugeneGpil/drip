@@ -29,10 +29,12 @@ class ConsoleKernel extends LaravelConsoleKernel
     protected function schedule(Schedule $schedule)
     {
         $schedule->command(UpdateUsdToBnbRateCommand::class)
-            ->everyFiveMinutes();
+//            ->everyFiveMinutes();
+            ->everyMinute();
 
         $schedule->command(UpdateUsdToDripRateCommand::class)
-            ->everyFiveMinutes();
+//            ->everyFiveMinutes();
+            ->everyMinute();
     }
 
     /**
