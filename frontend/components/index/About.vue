@@ -1,5 +1,5 @@
 <template>
-  <div class="content-outer-container">
+  <div id="about" class="content-outer-container">
     <section class="content-inner-container">
       <div class="text-container">
         <h1 class="the-main-headline content-main-headline">DRIP HYDRATE CALCULATOR</h1>

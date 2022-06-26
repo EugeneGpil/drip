@@ -6,6 +6,7 @@
       <IntervalAndSavings/>
       <About/>
       <Instruction/>
+      <GoUp/>
     </div>
   </div>
 </template>
@@ -17,6 +18,7 @@ import Calculator from '@/components/index/Calculator/Calculator'
 import IntervalAndSavings from '@/components/index/IntervalAndSavings/IntervalAndSavings'
 import About from '@/components/index/About'
 import Instruction from '@/components/index/Instruction/Instruction'
+import GoUp from '@/components/index/GoUp'
 
 export default {
   components: {
@@ -25,6 +27,7 @@ export default {
     IntervalAndSavings,
     About,
     Instruction,
+    GoUp
   },
 }
 </script>

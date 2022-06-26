@@ -15,7 +15,7 @@
       <div class="menu-outer-item menu-outer-item2">
         <div class="menu-inner-item">
           <img class="menu-inner-item__logo" src="~/static/img/menu_item_logo.webp" alt="menu item logo">
-          <div class="menu-inner-item__text">
+          <div class="menu-inner-item__text" @click="goToAbout">
               <span class="nowrap">
                 ABOUT
                 <span class="menu-inner-item__bigger-text">DRIP</span>
@@ -27,6 +27,19 @@
     </section>
   </div>
 </template>
+
+<script>
+// noinspection JSUnusedGlobalSymbols
+export default {
+  methods: {
+    goToAbout() {
+      const about = document.getElementById('about')
+      const top = about.offsetTop
+      window.scrollTo(0, top)
+    }
+  }
+}
+</script>
 
 <style lang="scss" scoped>
 .menu-outer-container {
@@ -194,6 +207,7 @@
     position: absolute;
     top: 17px;
     left: 17px;
+    cursor: pointer;
 
     @media (min-width: 900px) {
       top: 20px;
