@@ -1,38 +1,50 @@
 <!--suppress HtmlUnknownTarget -->
 <template>
   <div>
-    <div class="go-up-arrow">
-      <div class="go-up-arrow-triangle"/>
-      <div class="go-up-arrow-line"/>
+    <div class="go-up-arrow-container" @click="goUp">
+      <font-awesome-icon class="go-up-arrow" icon="arrow-up-long"/>
+      <img class="go-up-small-logo" src="~/static/img/small_logo.webp" alt="small_logo">
     </div>
-    <img class="go-up-small-logo" src="~/static/img/small_logo.webp" alt="small_logo">
   </div>
 </template>
 
+<!--suppress NpmUsedModulesInstalled -->
+<script>
+import goToTopOfElement from '@/assets/functions/goToTopOfElement'
+
+// noinspection JSUnusedGlobalSymbols
+export default {
+  methods: {
+    goUp() {
+      goToTopOfElement(document.getElementsByTagName("body")[0])
+    }
+  }
+}
+</script>
+
 <style lang="scss" scoped>
-.go-up-arrow {
+.go-up-arrow-container {
   display: flex;
   flex-direction: column;
   align-items: center;
+  cursor: pointer;
 }
 
-.go-up-arrow-triangle {
-  border: solid black;
-  border-width: 0 3px 3px 0;
-  display: inline-block;
-  padding: 5px;
-  transform: rotate(-135deg);
-  width: 0;
-}
+.go-up-arrow {
+  font-size: 20px;
+  margin-top: 15px;
 
-.go-up-arrow-line {
-  width: 2px;
-  background-color: black;
-  height: 40px;
-  margin-top: -12px;
+  @media (min-width: 300px) {
+    font-size: 25px;
+  }
 }
 
 .go-up-small-logo {
   width: 40px;
+  margin-top: 5px;
+
+  @media (min-width: 300px) {
+    width: 50px;
+  }
 }
 </style>

@@ -75,7 +75,9 @@ export default {
 
   fontawesome: {
     icons: {
-      solid: [],
+      solid: [
+        'faArrowUpLong',
+      ],
     },
   }
 }

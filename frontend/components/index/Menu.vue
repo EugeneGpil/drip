@@ -28,14 +28,15 @@
   </div>
 </template>
 
+<!--suppress NpmUsedModulesInstalled -->
 <script>
+import goToTopOfElement from '@/assets/functions/goToTopOfElement';
+
 // noinspection JSUnusedGlobalSymbols
 export default {
   methods: {
     goToAbout() {
-      const about = document.getElementById('about')
-      const top = about.offsetTop
-      window.scrollTo(0, top)
+      goToTopOfElement(document.getElementById('about'))
     }
   }
 }
