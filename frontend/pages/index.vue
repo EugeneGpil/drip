@@ -30,7 +30,7 @@ export default {
     About,
     Instruction,
     Donation,
-    GoUp
+    GoUp,
   },
 }
 </script>

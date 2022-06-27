@@ -11,6 +11,7 @@
         <BuddyAddress/>
       </div>
     </section>
+    <Contacts/>
   </div>
 </template>
 
@@ -21,10 +22,12 @@ import Description from '@/components/index/Donation/components/Description'
 import CopyButton from '@/components/index/Donation/components/CopyButton'
 import Wallet from '@/components/index/Donation/components/Wallet'
 import BuddyAddress from '@/components/index/Donation/components/BuddyAddress'
+import Contacts from '@/components/index/Donation/components/Contacts'
 
 // noinspection JSUnusedGlobalSymbols
 export default {
   components: {
+    Contacts,
     BuddyAddress,
     Wallet,
     Description,
@@ -35,6 +38,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.content-outer-container {
+  position: relative;
+}
+
 .data-field-container {
   display: flex;
   flex-direction: column;
