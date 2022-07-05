@@ -1,21 +1,21 @@
 <!--suppress HtmlUnknownTarget -->
 <template>
   <div class="login">
-    <img src="~/static/img/metamask_logo.svg" alt="metamask"/>
+    <img
+      :class="{
+        'black-and-white': !$store.state.Login.isMetamaskInstalled
+      }"
+      src="~/static/img/metamask_logo.svg"
+      alt="metamask"
+    >
   </div>
 </template>
 
 <script>
 // noinspection JSUnusedGlobalSymbols
 export default {
-  async mounted() {
-    /**
-     * @typedef window
-     * @property ethereum
-     */
-    if (!window.ethereum) {
-      return
-    }
+  mounted() {
+    this.$store.dispatch('Login/checkIsMetamaskInstalled')
   }
 }
 </script>
@@ -27,5 +27,10 @@ export default {
   right: 0;
   width: 50px;
   height: 50px;
+  cursor: pointer;
+}
+
+.black-and-white {
+  filter: grayscale(100%)
 }
 </style>
