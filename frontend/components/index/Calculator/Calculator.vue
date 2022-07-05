@@ -1,5 +1,6 @@
 <template>
   <div class="content-outer-container">
+    <Login/>
     <section class="content-inner-container">
       <HydrationGasFee/>
       <PairBlock/>
@@ -18,6 +19,7 @@ import PairBlock from '@/components/index/Calculator/components/PairBlock'
 import MainResultBlock from '@/components/index/shared/MainResultBlock'
 import HydrationGasFee from '@/components/index/Calculator/components/HydrationGasFee'
 import DepositAmount from '@/components/index/Calculator/components/DepositAmount'
+import Login from '@/components/index/Calculator/components/Login'
 
 // noinspection JSUnusedGlobalSymbols
 export default {
@@ -26,6 +28,7 @@ export default {
     PairBlock,
     DepositAmount,
     MainResultBlock,
+    Login,
   },
 
   computed: {
@@ -49,3 +52,9 @@ export default {
   },
 }
 </script>
+
+<style lang="scss" scoped>
+.content-outer-container {
+  position: relative;
+}
+</style>

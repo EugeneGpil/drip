@@ -47,6 +47,8 @@ export default {
 
 <style lang="scss" scoped>
 .menu-outer-container {
+  align-self: flex-start;
+
   @media (min-width: 750px) {
     position: fixed;
     right: 0;

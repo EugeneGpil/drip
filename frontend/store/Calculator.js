@@ -1,5 +1,6 @@
 // noinspection NpmUsedModulesInstalled,JSUnusedGlobalSymbols
 
+import getDefaultMutations from '@/assets/functions/getDefaultMutations'
 import calculatorActions from '@/assets/store/Calculator/actions'
 import calculatorGetters from '@/assets/store/Calculator/getters'
 
@@ -12,11 +13,7 @@ export const state = () => ({
   wasDripRateEdited: false,
 })
 
-export const mutations = {
-  set(state, [property, value]) {
-    state[property] = value
-  },
-}
+export const mutations = getDefaultMutations()
 
 export const actions = calculatorActions
 export const getters = calculatorGetters

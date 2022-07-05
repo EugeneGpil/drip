@@ -54,7 +54,7 @@ export default {
   padding-bottom: 25px;
 
   @media (min-width: 750px) {
-    padding-top: 15px;
+    padding-top: 55px;
   }
 }
 </style>
