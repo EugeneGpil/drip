@@ -1,10 +1,8 @@
 <!--suppress HtmlUnknownTarget -->
 <template>
-  <div class="login">
+  <div class="login" @click="tryLogin">
     <img
-      :class="{
-        'black-and-white': !$store.state.Login.isMetamaskInstalled
-      }"
+      :class="{'black-and-white': !isMetamaskInstalled}"
       src="~/static/img/metamask_logo.svg"
       alt="metamask"
     >
@@ -14,6 +12,19 @@
 <script>
 // noinspection JSUnusedGlobalSymbols
 export default {
+  computed: {
+    isMetamaskInstalled() {
+      return this.$store.state.Login.isMetamaskInstalled
+    },
+  },
+  methods: {
+    tryLogin() {
+      if (!this.isMetamaskInstalled) {
+        // noinspection JSUnresolvedVariable
+        process.browser && window.open('https://metamask.io', "_blank")
+      }
+    }
+  },
   mounted() {
     this.$store.dispatch('Login/checkIsMetamaskInstalled')
   }
