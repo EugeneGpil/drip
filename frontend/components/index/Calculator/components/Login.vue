@@ -19,10 +19,20 @@ export default {
   },
   methods: {
     tryLogin() {
-      if (!this.isMetamaskInstalled) {
-        // noinspection JSUnresolvedVariable
-        process.browser && window.open('https://metamask.io', "_blank")
+      // noinspection JSUnresolvedVariable
+      if (!process.browser) {
+        return
       }
+
+      if (!this.isMetamaskInstalled) {
+        return window.open('https://metamask.io', "_blank")
+      }
+
+      /**
+       * @typedef window.ethereum
+       * @property {String} networkVersion
+       */
+      console.log(window.ethereum.networkVersion)
     }
   },
   mounted() {
