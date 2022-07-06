@@ -77,6 +77,7 @@ export default {
     icons: {
       solid: [
         'faArrowUpLong',
+        'faWallet',
       ],
     },
   }

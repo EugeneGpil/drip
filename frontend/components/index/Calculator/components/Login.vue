@@ -1,11 +1,7 @@
 <!--suppress HtmlUnknownTarget -->
 <template>
   <div class="login" @click="tryLogin">
-    <img
-      :class="{'black-and-white': !isMetamaskInstalled}"
-      src="~/static/img/metamask_logo.svg"
-      alt="metamask"
-    >
+    <font-awesome-icon class="wallet-icon" icon="wallet"/>
   </div>
 </template>
 
@@ -49,9 +45,16 @@ export default {
   width: 50px;
   height: 50px;
   cursor: pointer;
+  border-radius: 100%;
+  border: solid 2px #ACE;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #BDF;
+  box-sizing: border-box;
 }
-
-.black-and-white {
-  filter: grayscale(100%)
+.wallet-icon {
+  font-size: 25px;
+  color: #356;
 }
 </style>
