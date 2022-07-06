@@ -20,16 +20,15 @@ RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | b
 
 ARG NODE_VERSION=16.14.2
 ENV PATH /home/app/.nvm/versions/node/v${NODE_VERSION}/bin:${PATH}
-RUN npm install pm2 -g
 
 USER root
 RUN echo "\n\
 				source /home/app/.nvm/nvm.sh\n\
     " >> ~/.bashrc
 
-ARG ENVIRONMENT=production
 CMD if [ "$ENVIRONMENT" = "production" ] ; then \
-        pm2 start \
+        npm run build && \
+        npm run start \
     ; else \
         tail -F anything \
     ; fi
