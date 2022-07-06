@@ -26,3 +26,10 @@ USER root
 RUN echo "\n\
 				source /home/app/.nvm/nvm.sh\n\
     " >> ~/.bashrc
+
+ARG ENVIRONMENT=production
+CMD if [ "$ENVIRONMENT" = "production" ] ; then \
+        pm2 start \
+    ; else \
+        tail -F anything \
+    ; fi
