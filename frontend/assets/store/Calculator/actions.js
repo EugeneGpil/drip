@@ -1,6 +1,5 @@
 import getCurrencyRate from '../../actions/getCurrencyRate'
 import getFromLocalStorage from '../../actions/getFromLocalStorage'
-import setWithLocalStorage from '../../actions/setWithLocalStorage'
 
 let updateRateInterval
 
