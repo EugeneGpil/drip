@@ -1,16 +1,13 @@
 // noinspection JSUnusedGlobalSymbols
-export default ({
-                  commit,
-                  local_storage_key: localStorageKey,
-                  state_property: stateProperty,
-                  presenter,
-                }) => {
+/**
+ *
+ * @param {String} localStorageKey
+ * @param {function} saverClosure
+ */
+export default (localStorageKey, saverClosure) => {
   let value = window.localStorage.getItem(localStorageKey)
-  if (!value) {
+  if (value === undefined) {
     return
   }
-  if (presenter) {
-    value = presenter(value)
-  }
-  commit('set', [stateProperty, value])
+  saverClosure(value)
 }

@@ -34,39 +34,25 @@ export default {
   },
 
   getDepositAmount({commit}) {
-    getFromLocalStorage({
-      commit,
-      local_storage_key: 'deposit_amount',
-      state_property: 'depositAmount',
-      presenter: (value) => parseFloat(value),
+    getFromLocalStorage('deposit_amount', (depositAmount) => {
+      commit('set', ['depositAmount', parseFloat(depositAmount)])
     })
   },
 
   setDepositAmount({commit}, depositAmount) {
-    setWithLocalStorage({
-      commit,
-      value: depositAmount,
-      local_storage_key: 'deposit_amount',
-      state_property: 'depositAmount',
-    })
+    window?.localStorage.setItem('deposit_amount', depositAmount)
+    commit('set', ['depositAmount', depositAmount])
   },
 
   getHydrationGasFee({commit}) {
-    getFromLocalStorage({
-      commit,
-      local_storage_key: 'hydration_gas_fee',
-      state_property: 'hydrationGasFee',
-      presenter: (value) => parseFloat(value),
+    getFromLocalStorage('hydration_gas_fee', (hydrationGasFee) => {
+      commit('set', ['hydrationGasFee', parseFloat(hydrationGasFee)])
     })
   },
 
   setHydrationGasFee({commit}, hydrationGasFee) {
-    setWithLocalStorage({
-      commit,
-      value: hydrationGasFee,
-      local_storage_key: 'hydration_gas_fee',
-      state_property: 'hydrationGasFee',
-    })
+    window?.localStorage.setItem('hydration_gas_fee', hydrationGasFee)
+    commit('set', ['hydrationGasFee', hydrationGasFee])
   },
 
   startUpdateRatesInterval({state, dispatch}) {

@@ -1,26 +1,45 @@
 <!--suppress HtmlUnknownTarget -->
 <template>
-  <div class="login" @click="tryLogin">
-    <font-awesome-icon class="wallet-icon" icon="wallet"/>
+  <div>
+    <div class="login" @click="tryLogin">
+      <font-awesome-icon v-if="isAttemptingToLogin" class="wallet-icon fa-spin" icon="yin-yang"/>
+      <font-awesome-icon v-else class="wallet-icon" icon="wallet"/>
+    </div>
+
+    <Modal v-if="isIncorrectNetworkModalVisible" @close="isIncorrectNetworkModalVisible = false">
+      <div class="modal-headline">INCORRECT NETWORK</div>
+      <div class="modal-headline">PLEASE CONNECT TO BINANCE SMART CHAIN (BEP20)</div>
+    </Modal>
+
+    <Modal v-if="loginErrorMessage" @close="loginErrorMessage = ''">
+      <div class="modal-headline">{{ loginErrorMessage }}</div>
+    </Modal>
   </div>
 </template>
 
 <script>
+import Modal from '../../../layout/Modal'
+
 // noinspection JSUnusedGlobalSymbols
 export default {
-  computed: {
-    isWalletInstalled() {
-      return this.$store.state.Login.isWalletInstalled
-    },
+  components: {
+    Modal,
+  },
+  data() {
+    return {
+      isIncorrectNetworkModalVisible: false,
+      isAttemptingToLogin: false,
+      loginErrorMessage: '',
+    }
   },
   methods: {
-    tryLogin() {
+    async tryLogin() {
       // noinspection JSUnresolvedVariable
-      if (!process.browser) {
+      if (!process.browser || this.isAttemptingToLogin) {
         return
       }
 
-      if (!this.isWalletInstalled) {
+      if (!window.ethereum) {
         return window.open('https://metamask.io', "_blank")
       }
 
@@ -29,13 +48,22 @@ export default {
        * @property {String} networkVersion
        */
       if (window.ethereum.networkVersion !== process.env.ETHEREUM_NETWORK_VERSION) {
-
+        return this.isIncorrectNetworkModalVisible = true
       }
+
+      this.isAttemptingToLogin = true
+      let accounts
+      try {
+        accounts = await ethereum.request({method: 'eth_requestAccounts'})
+      } catch (e) {
+        this.isAttemptingToLogin = false
+        return this.loginErrorMessage = e.message
+      }
+      this.isAttemptingToLogin = false
+      const account = accounts[0]
+      console.log(account)
     }
   },
-  mounted() {
-    this.$store.dispatch('Login/checkIsWalletInstalled')
-  }
 }
 </script>
 
@@ -55,6 +83,7 @@ export default {
   background-color: #BDF;
   box-sizing: border-box;
 }
+
 .wallet-icon {
   font-size: 25px;
   color: #356;

@@ -40,6 +40,7 @@ export default {
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
     '@nuxtjs/fontawesome',
+    '@nuxtjs/dotenv',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -78,6 +79,7 @@ export default {
       solid: [
         'faArrowUpLong',
         'faWallet',
+        'faYinYang',
       ],
     },
   },
