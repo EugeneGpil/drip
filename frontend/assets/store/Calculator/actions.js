@@ -1,8 +1,6 @@
-// noinspection NpmUsedModulesInstalled
-
-import getCurrencyRate from '@/assets/actions/getCurrencyRate'
-import getFromLocalStorage from '@/assets/actions/getFromLocalStorage'
-import setWithLocalStorage from '@/assets/actions/setWithLocalStorage'
+import getCurrencyRate from '../../actions/getCurrencyRate'
+import getFromLocalStorage from '../../actions/getFromLocalStorage'
+import setWithLocalStorage from '../../actions/setWithLocalStorage'
 
 let updateRateInterval
 

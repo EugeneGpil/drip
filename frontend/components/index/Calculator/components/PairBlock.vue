@@ -5,10 +5,9 @@
   </div>
 </template>
 
-<!--suppress NpmUsedModulesInstalled -->
 <script>
-import DripPrice from '@/components/index/Calculator/PairBlock/DripPrice'
-import BnbPrice from '@/components/index/Calculator/PairBlock/BnbPrice'
+import DripPrice from '../../../index/Calculator/PairBlock/DripPrice'
+import BnbPrice from '../../../index/Calculator/PairBlock/BnbPrice'
 
 // noinspection JSUnusedGlobalSymbols
 export default {

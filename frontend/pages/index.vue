@@ -12,15 +12,14 @@
   </div>
 </template>
 
-<!--suppress NpmUsedModulesInstalled -->
 <script>
-import Menu from '@/components/index/Menu'
-import Calculator from '@/components/index/Calculator/Calculator'
-import IntervalAndSavings from '@/components/index/IntervalAndSavings/IntervalAndSavings'
-import About from '@/components/index/About'
-import Instruction from '@/components/index/Instruction/Instruction'
-import GoUp from '@/components/index/GoUp'
-import Donation from '@/components/index/Donation/Donation'
+import Menu from '../components/index/Menu'
+import Calculator from '../components/index/Calculator/Calculator'
+import IntervalAndSavings from '../components/index/IntervalAndSavings/IntervalAndSavings'
+import About from '../components/index/About'
+import Instruction from '../components/index/Instruction/Instruction'
+import GoUp from '../components/index/GoUp'
+import Donation from '../components/index/Donation/Donation'
 
 export default {
   components: {

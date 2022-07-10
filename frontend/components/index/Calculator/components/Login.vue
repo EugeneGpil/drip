@@ -9,8 +9,8 @@
 // noinspection JSUnusedGlobalSymbols
 export default {
   computed: {
-    isMetamaskInstalled() {
-      return this.$store.state.Login.isMetamaskInstalled
+    isWalletInstalled() {
+      return this.$store.state.Login.isWalletInstalled
     },
   },
   methods: {
@@ -20,7 +20,7 @@ export default {
         return
       }
 
-      if (!this.isMetamaskInstalled) {
+      if (!this.isWalletInstalled) {
         return window.open('https://metamask.io', "_blank")
       }
 
@@ -28,11 +28,13 @@ export default {
        * @typedef window.ethereum
        * @property {String} networkVersion
        */
-      console.log(window.ethereum.networkVersion)
+      if (window.ethereum.networkVersion !== process.env.ETHEREUM_NETWORK_VERSION) {
+
+      }
     }
   },
   mounted() {
-    this.$store.dispatch('Login/checkIsMetamaskInstalled')
+    this.$store.dispatch('Login/checkIsWalletInstalled')
   }
 }
 </script>

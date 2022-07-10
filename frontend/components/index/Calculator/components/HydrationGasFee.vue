@@ -9,9 +9,8 @@
   </MainInputBlock>
 </template>
 
-<!--suppress NpmUsedModulesInstalled -->
 <script>
-import MainInputBlock from '@/components/index/Calculator/shared/MainInputBlock'
+import MainInputBlock from '../../../index/Calculator/shared/MainInputBlock'
 
 // noinspection JSUnusedGlobalSymbols
 export default {

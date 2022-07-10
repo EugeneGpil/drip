@@ -14,15 +14,14 @@
   </div>
 </template>
 
-<!--suppress NpmUsedModulesInstalled -->
 <script>
-import AdjustHydrationGasFee from '@/components/index/Instruction/components/AdjustHydrationGasFee'
-import EnterDepositAmount from '@/components/index/Instruction/components/EnterDepositAmount'
-import ReadyToGo from '@/components/index/Instruction/components/ReadyToGo'
-import WillBeSaved from '@/components/index/Instruction/components/WillBeSaved'
-import GetUpdated from '@/components/index/Instruction/components/GetUpdated'
-import HappyDripping from '@/components/index/Instruction/components/HappyDripping'
-import Headline from '@/components/index/Instruction/components/Headline'
+import AdjustHydrationGasFee from '../../index/Instruction/components/AdjustHydrationGasFee'
+import EnterDepositAmount from '../../index/Instruction/components/EnterDepositAmount'
+import ReadyToGo from '../../index/Instruction/components/ReadyToGo'
+import WillBeSaved from '../../index/Instruction/components/WillBeSaved'
+import GetUpdated from '../../index/Instruction/components/GetUpdated'
+import HappyDripping from '../../index/Instruction/components/HappyDripping'
+import Headline from '../../index/Instruction/components/Headline'
 
 // noinspection JSUnusedGlobalSymbols
 export default {

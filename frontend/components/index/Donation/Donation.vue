@@ -15,14 +15,13 @@
   </div>
 </template>
 
-<!--suppress NpmUsedModulesInstalled -->
 <script>
-import Headline from '@/components/index/Donation/components/Headline'
-import Description from '@/components/index/Donation/components/Description'
-import CopyButton from '@/components/index/Donation/components/CopyButton'
-import Wallet from '@/components/index/Donation/components/Wallet'
-import BuddyAddress from '@/components/index/Donation/components/BuddyAddress'
-import Contacts from '@/components/index/Donation/components/Contacts'
+import Headline from '../../index/Donation/components/Headline'
+import Description from '../../index/Donation/components/Description'
+import CopyButton from '../../index/Donation/components/CopyButton'
+import Wallet from '../../index/Donation/components/Wallet'
+import BuddyAddress from '../../index/Donation/components/BuddyAddress'
+import Contacts from '../../index/Donation/components/Contacts'
 
 // noinspection JSUnusedGlobalSymbols
 export default {

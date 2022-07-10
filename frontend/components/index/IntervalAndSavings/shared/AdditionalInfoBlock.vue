@@ -13,9 +13,8 @@
   </div>
 </template>
 
-<!--suppress NpmUsedModulesInstalled -->
 <script>
-import Modal from '@/components/layout/Modal'
+import Modal from '../../../layout/Modal'
 
 // noinspection JSUnusedGlobalSymbols
 export default {

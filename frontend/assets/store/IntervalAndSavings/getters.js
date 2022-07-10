@@ -1,7 +1,7 @@
-// noinspection JSUnusedGlobalSymbols,NpmUsedModulesInstalled
+// noinspection JSUnusedGlobalSymbols
 
-import interval from '@/assets/store/IntervalAndSavings/getters/interval'
-import saved from '@/assets/store/IntervalAndSavings/getters/saved'
+import interval from '../../store/IntervalAndSavings/getters/interval'
+import saved from '../../store/IntervalAndSavings/getters/saved'
 
 export default {
   ...interval,

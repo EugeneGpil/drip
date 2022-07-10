@@ -24,11 +24,10 @@
   </div>
 </template>
 
-<!--suppress NpmUsedModulesInstalled -->
 <script>
-import Modal from '@/components/layout/Modal'
+import Modal from '../../../layout/Modal'
 
-import stringToFloat from '@/assets/converters/stringToFloat'
+import stringToFloat from '../../../../assets/converters/stringToFloat'
 
 // noinspection JSUnusedGlobalSymbols
 export default {

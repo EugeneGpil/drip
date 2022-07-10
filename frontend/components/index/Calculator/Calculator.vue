@@ -13,13 +13,12 @@
   </div>
 </template>
 
-<!--suppress NpmUsedModulesInstalled -->
 <script>
-import PairBlock from '@/components/index/Calculator/components/PairBlock'
-import MainResultBlock from '@/components/index/shared/MainResultBlock'
-import HydrationGasFee from '@/components/index/Calculator/components/HydrationGasFee'
-import DepositAmount from '@/components/index/Calculator/components/DepositAmount'
-import Login from '@/components/index/Calculator/components/Login'
+import PairBlock from '../../index/Calculator/components/PairBlock'
+import MainResultBlock from '../../index/shared/MainResultBlock'
+import HydrationGasFee from '../../index/Calculator/components/HydrationGasFee'
+import DepositAmount from '../../index/Calculator/components/DepositAmount'
+import Login from '../../index/Calculator/components/Login'
 
 // noinspection JSUnusedGlobalSymbols
 export default {

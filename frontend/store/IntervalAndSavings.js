@@ -1,6 +1,6 @@
-// noinspection NpmUsedModulesInstalled,JSUnusedGlobalSymbols
+// noinspection JSUnusedGlobalSymbols
 
-import intervalAndSavingsGetters from '@/assets/store/IntervalAndSavings/getters'
+import intervalAndSavingsGetters from '../assets/store/IntervalAndSavings/getters'
 
 export const state = () => ({})
 export const mutations = {}

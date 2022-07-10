@@ -10,11 +10,10 @@
   </div>
 </template>
 
-<!--suppress NpmUsedModulesInstalled -->
 <script>
-import IntervalToHydrate from '@/components/index/IntervalAndSavings/components/IntervalToHydrate'
-import SavedInUsd from '@/components/index/IntervalAndSavings/components/SavedInUsd'
-import SavedInDrip from '@/components/index/IntervalAndSavings/components/SavedInDrip'
+import IntervalToHydrate from '../../index/IntervalAndSavings/components/IntervalToHydrate'
+import SavedInUsd from '../../index/IntervalAndSavings/components/SavedInUsd'
+import SavedInDrip from '../../index/IntervalAndSavings/components/SavedInDrip'
 
 // noinspection JSUnusedGlobalSymbols
 export default {

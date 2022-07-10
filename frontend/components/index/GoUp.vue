@@ -8,9 +8,8 @@
   </div>
 </template>
 
-<!--suppress NpmUsedModulesInstalled -->
 <script>
-import goToTopOfElement from '@/assets/functions/goToTopOfElement'
+import goToTopOfElement from '../../assets/functions/goToTopOfElement'
 
 // noinspection JSUnusedGlobalSymbols
 export default {

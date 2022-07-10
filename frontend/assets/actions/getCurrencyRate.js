@@ -1,5 +1,4 @@
-// noinspection NpmUsedModulesInstalled
-import v1 from '@/assets/routes/v1'
+import v1 from '../routes/v1'
 
 // noinspection JSUnusedGlobalSymbols
 export default async ({

@@ -1,8 +1,8 @@
-// noinspection NpmUsedModulesInstalled,JSUnusedGlobalSymbols
+// noinspection JSUnusedGlobalSymbols
 
-import getDefaultMutations from '@/assets/functions/getDefaultMutations'
-import calculatorActions from '@/assets/store/Calculator/actions'
-import calculatorGetters from '@/assets/store/Calculator/getters'
+import getDefaultMutations from '../assets/functions/getDefaultMutations'
+import calculatorActions from '../assets/store/Calculator/actions'
+import calculatorGetters from '../assets/store/Calculator/getters'
 
 export const state = () => ({
   bnbRate: 400,

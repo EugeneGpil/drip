@@ -10,9 +10,8 @@
   </AdditionalInfoBlock>
 </template>
 
-<!--suppress NpmUsedModulesInstalled -->
 <script>
-import AdditionalInfoBlock from '@/components/index/IntervalAndSavings/shared/AdditionalInfoBlock'
+import AdditionalInfoBlock from '../../../index/IntervalAndSavings/shared/AdditionalInfoBlock'
 
 // noinspection JSUnusedGlobalSymbols
 export default {

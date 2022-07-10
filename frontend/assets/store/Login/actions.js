@@ -1,7 +1,7 @@
 // noinspection JSUnusedGlobalSymbols
 
 export default {
-  checkIsMetamaskInstalled({commit}) {
+  checkIsWalletInstalled({commit}) {
     /**
      * @type window
      * @property {Object} ethereum
@@ -9,7 +9,7 @@ export default {
      * @typedef process
      * @property {Boolean} client
      */
-    const isMetamaskInstalled = process.browser && !!window.ethereum
-    commit('set', ['isMetamaskInstalled', isMetamaskInstalled])
+    const isWalletInstalled = process.browser && !!window.ethereum
+    commit('set', ['isWalletInstalled', isWalletInstalled])
   }
 }

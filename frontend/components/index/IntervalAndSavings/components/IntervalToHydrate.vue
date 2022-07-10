@@ -11,9 +11,8 @@
   </MainResultBlock>
 </template>
 
-<!--suppress NpmUsedModulesInstalled -->
 <script>
-import MainResultBlock from '@/components/index/shared/MainResultBlock'
+import MainResultBlock from '../../../index/shared/MainResultBlock'
 
 // noinspection JSUnusedGlobalSymbols
 export default {
