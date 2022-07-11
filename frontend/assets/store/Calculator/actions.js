@@ -6,22 +6,14 @@ let updateRateInterval
 // noinspection JSUnusedGlobalSymbols
 export default {
   async getBnbRate({commit}) {
-    await getCurrencyRate({
-      commit,
-      axios: this.$axios,
-      currency_from_name: 'usd',
-      currency_to_name: 'bnb',
-      state_property: 'bnbRate',
+    await getCurrencyRate.bind(this)('usd', 'bnb', (rate) => {
+      commit('set', ['bnbRate', rate])
     })
   },
 
   async getDripRate({commit}) {
-    await getCurrencyRate({
-      commit,
-      axios: this.$axios,
-      currency_from_name: 'usd',
-      currency_to_name: 'drip',
-      state_property: 'dripRate',
+    await getCurrencyRate.bind(this)('usd', 'drip', (rate) => {
+      commit('set', ['dripRate', rate])
     })
   },
 
