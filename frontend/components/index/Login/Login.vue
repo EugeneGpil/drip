@@ -1,7 +1,7 @@
 <!--suppress HtmlUnknownTarget -->
 <template>
   <div>
-    <div class="login" @click="tryLogin">
+    <div class="login" @click="loginLogout">
       <WalletLoadingIcon/>
       <WalletIcon/>
       <WalletCheckIcon/>
@@ -28,8 +28,8 @@ export default {
     IncorrectNetworkModal,
   },
   methods: {
-    tryLogin() {
-      this.$store.dispatch('Login/tryToLogin')
+    loginLogout() {
+      this.$store.dispatch('Login/loginLogout')
     },
   },
   mounted() {

@@ -1,12 +1,13 @@
 // noinspection JSUnusedGlobalSymbols
 
-import tryToLogin from './Actions/tryToLogin'
+import loginLogout from './Actions/loginLogout'
 
 export default {
-  tryToLogin,
+  loginLogout,
 
   setAccount({commit}, account) {
-    window?.localStorage.setItem('account', account)
+    account === undefined && window?.localStorage.removeItem('account')
+    account !== undefined && window?.localStorage.setItem('account', account)
     commit('set', ['account', account])
   },
 

@@ -4,6 +4,10 @@ export default async ({state, commit, dispatch}) => {
     return
   }
 
+  if (state.account) {
+    return dispatch('setAccount', undefined)
+  }
+
   if (!window.ethereum) {
     return window.open('https://metamask.io', "_blank")
   }
