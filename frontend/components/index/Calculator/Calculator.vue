@@ -18,7 +18,7 @@ import PairBlock from '../../index/Calculator/components/PairBlock'
 import MainResultBlock from '../../index/shared/MainResultBlock'
 import HydrationGasFee from '../../index/Calculator/components/HydrationGasFee'
 import DepositAmount from '../../index/Calculator/components/DepositAmount'
-import Login from '../../index/Calculator/components/Login'
+import Login from '../Login/Login'
 
 // noinspection JSUnusedGlobalSymbols
 export default {

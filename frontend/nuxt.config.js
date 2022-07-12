@@ -80,6 +80,7 @@ export default {
         'faArrowUpLong',
         'faWallet',
         'faYinYang',
+        'faCircleCheck',
       ],
     },
   },
