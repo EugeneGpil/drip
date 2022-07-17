@@ -1,4 +1,3 @@
-<!--suppress HtmlUnknownTarget -->
 <template>
   <div>
     <div class="login" @click="loginLogout">
