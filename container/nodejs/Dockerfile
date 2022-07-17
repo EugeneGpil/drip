@@ -27,7 +27,6 @@ RUN echo "\n\
     " >> ~/.bashrc
 
 CMD if [ "$ENVIRONMENT" = "production" ] ; then \
-        npm run build && \
         npm run start \
     ; else \
         tail -F anything \
