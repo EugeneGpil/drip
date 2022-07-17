@@ -39,6 +39,7 @@ export default {
 
 <style lang="scss" scoped>
 .login {
+  display: none;
   position: absolute;
   top: -60px;
   right: 0;
@@ -47,7 +48,7 @@ export default {
   cursor: pointer;
   border-radius: 100%;
   border: solid 2px #ACE;
-  display: flex;
+  //display: flex;
   align-items: center;
   justify-content: center;
   background-color: #BDF;
