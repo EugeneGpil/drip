@@ -9,13 +9,29 @@ services:
         - ID_GROUP=${ID_GROUP}
         - ID_USER=${ID_USER}
         - NODE_VERSION=${NODE_VERSION}
-    command: bash -c "tail -F anything"
+    working_dir: /usr/share/nginx/html
+    volumes:
+      - ../frontend:/usr/share/nginx/html
+    environment:
+      - HOST=0.0.0.0
+      - ENVIRONMENT=${ENVIRONMENT}
+    user: "${ID_USER}:${ID_GROUP}"
+    restart: unless-stopped
+
+  nodejs_build:
+    build:
+      context: nodejs
+      args:
+        - ID_GROUP=${ID_GROUP}
+        - ID_USER=${ID_USER}
+        - NODE_VERSION=${NODE_VERSION}
     working_dir: /usr/share/nginx/html
     volumes:
       - ../frontend:/usr/share/nginx/html
     environment:
       - HOST=0.0.0.0
     user: "${ID_USER}:${ID_GROUP}"
+    command: bash -c "npm ci && npm run build"
 
   nginx:
     build:
@@ -46,6 +62,7 @@ services:
     command: bash -c "service php${PHP_VERSION}-fpm start && tail -F anything"
     environment:
       PHP_IDE_CONFIG: "serverName=${PHP_IDE_CONFIG_SERVER_NAME}"
+    restart: unless-stopped
 
   mysql:
     build:
@@ -72,3 +89,4 @@ services:
     volumes:
       - ../backend:/usr/share/nginx/html
     command: bash -c "cron && tail -F anything"
+    restart: unless-stopped
