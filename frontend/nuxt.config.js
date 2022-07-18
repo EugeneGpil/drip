@@ -84,4 +84,6 @@ export default {
       ],
     },
   },
+
+  target: 'static',
 }

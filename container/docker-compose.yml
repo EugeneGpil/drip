@@ -31,7 +31,7 @@ services:
     environment:
       - HOST=0.0.0.0
     user: "${ID_USER}:${ID_GROUP}"
-    command: bash -c "npm ci && npm run build"
+    command: bash -c "npm ci && npm run generate"
 
   nginx:
     build:
