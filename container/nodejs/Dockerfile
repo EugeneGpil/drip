@@ -1,4 +1,6 @@
-FROM ubuntu:20.04
+FROM ubuntu:22.04
+
+ENV DEBIAN_FRONTEND=noninteractive
 
 USER root
 ARG ID_USER=1000
@@ -27,7 +29,8 @@ RUN echo "\n\
     " >> ~/.bashrc
 
 CMD if [ "$ENVIRONMENT" = "production" ] ; then \
-        npm run start \
+        npm ci && \
+        npm run build \
     ; else \
         tail -F anything \
     ; fi

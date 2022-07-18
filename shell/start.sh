@@ -1,3 +1,3 @@
 # shellcheck disable=SC2155
 export DOCKERHOST=$(ifconfig | grep -A 1 docker0 | awk 'NR > 1 {print $2}')
-cd container && docker compose up --build --detach cron mysql nginx nodejs php
+cd container && docker compose up --build --detach --remove-orphans

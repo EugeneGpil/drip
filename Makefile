@@ -23,6 +23,3 @@ ide-helper:
 
 exec-nodejs:
 	cd container && docker compose exec nodejs bash
-
-nuxt-build:
-	cd container && docker compose up --build nodejs_build

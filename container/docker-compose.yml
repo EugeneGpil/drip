@@ -9,38 +9,24 @@ services:
         - ID_GROUP=${ID_GROUP}
         - ID_USER=${ID_USER}
         - NODE_VERSION=${NODE_VERSION}
-    working_dir: /usr/share/nginx/html
+    working_dir: /usr/share/nginx/frontend
     volumes:
-      - ../frontend:/usr/share/nginx/html
+      - ../frontend:/usr/share/nginx/frontend
     environment:
       - HOST=0.0.0.0
       - ENVIRONMENT=${ENVIRONMENT}
     user: "${ID_USER}:${ID_GROUP}"
     restart: unless-stopped
 
-  nodejs_build:
-    build:
-      context: nodejs
-      args:
-        - ID_GROUP=${ID_GROUP}
-        - ID_USER=${ID_USER}
-        - NODE_VERSION=${NODE_VERSION}
-    working_dir: /usr/share/nginx/html
-    volumes:
-      - ../frontend:/usr/share/nginx/html
-    environment:
-      - HOST=0.0.0.0
-    user: "${ID_USER}:${ID_GROUP}"
-    command: bash -c "npm ci && npm run generate"
-
   nginx:
     build:
       context: nginx
       args:
         - NGINX_VERSION=${NGINX_VERSION}
-    working_dir: /usr/share/nginx/html
+    working_dir: /usr/share/nginx/backend
     volumes:
-      - ../backend:/usr/share/nginx/html
+      - ../backend:/usr/share/nginx/backend
+      - ../frontend:/usr/share/nginx/frontend
     restart: unless-stopped
     ports:
       - ${PORT_NGINX}:80
@@ -56,9 +42,9 @@ services:
         - ID_GROUP=${ID_GROUP}
         - ID_USER=${ID_USER}
         - DOCKERHOST=${DOCKERHOST}
-    working_dir: /usr/share/nginx/html
+    working_dir: /usr/share/nginx/backend
     volumes:
-      - ../backend:/usr/share/nginx/html
+      - ../backend:/usr/share/nginx/backend
     command: bash -c "service php${PHP_VERSION}-fpm start && tail -F anything"
     environment:
       PHP_IDE_CONFIG: "serverName=${PHP_IDE_CONFIG_SERVER_NAME}"
@@ -75,18 +61,18 @@ services:
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
     volumes:
       - ./databases/mysql:/var/lib/mysql
-      - ../backend:/usr/share/nginx/html
+      - ../backend:/usr/share/nginx/backend
     ports:
       - ${PORT_MYSQL}:3306
-    working_dir: /usr/share/nginx/html
+    working_dir: /usr/share/nginx/backend
 
   cron:
     build:
       context: cron
       args:
         - PHP_VERSION=${PHP_VERSION}
-    working_dir: /usr/share/nginx/html
+    working_dir: /usr/share/nginx/backend
     volumes:
-      - ../backend:/usr/share/nginx/html
+      - ../backend:/usr/share/nginx/backend
     command: bash -c "cron && tail -F anything"
     restart: unless-stopped
