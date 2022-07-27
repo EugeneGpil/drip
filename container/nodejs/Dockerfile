@@ -27,10 +27,3 @@ USER root
 RUN echo "\n\
         source /home/app/.nvm/nvm.sh\n\
     " >> ~/.bashrc
-
-CMD if [ "$ENVIRONMENT" = "production" ] ; then \
-        npm ci && \
-        npm run build \
-    ; else \
-        tail -F anything \
-    ; fi

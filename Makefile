@@ -1,5 +1,15 @@
-start:
-	./shell/start.sh
+dev:
+	./shell/dev.sh
+
+release:
+	cd container &&\
+	docker compose stop &&\
+	docker compose up --build --remove-orphans --detach &&\
+ 	docker compose run --rm --user app php composer install --no-interaction &&\
+ 	docker compose run --rm --user app php php artisan migrate --force --no-interaction &&\
+ 	docker compose run --rm nodejs_build npm ci &&\
+ 	docker compose run --rm nodejs_build npm run generate &&\
+	docker compose --profile prod up --build --detach
 
 stop:
 	cd container && docker compose stop

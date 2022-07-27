@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
 
-  nodejs:
+  nodejs_build:
     build:
       context: nodejs
       args:
@@ -14,9 +14,9 @@ services:
       - ../frontend:/usr/share/nginx/frontend
     environment:
       - HOST=0.0.0.0
-      - ENVIRONMENT=${ENVIRONMENT}
     user: "${ID_USER}:${ID_GROUP}"
-    restart: unless-stopped
+    profiles:
+      - build
 
   nginx:
     build:
