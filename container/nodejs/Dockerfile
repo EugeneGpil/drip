@@ -8,7 +8,10 @@ ARG ID_GROUP=1000
 RUN groupadd -g ${ID_GROUP} app &&\
     useradd -u ${ID_USER} -m app -g app &&\
     apt-get update &&\
-    apt-get install curl nano -y
+    apt-get install \
+      curl\
+      nano\
+      git -y
 
 USER app
 ARG NODE_VERSION=16.14.2
