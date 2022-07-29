@@ -3,13 +3,17 @@ dev:
 
 release:
 	cd container &&\
+	docker compose build &&\
 	docker compose stop &&\
 	docker compose up --build --remove-orphans --detach &&\
  	docker compose run --rm --user app php composer install --no-interaction &&\
  	docker compose run --rm --user app php php artisan migrate --force --no-interaction &&\
- 	docker compose run --rm nodejs_build npm ci &&\
- 	docker compose run --rm nodejs_build npm run generate &&\
-	docker compose --profile prod up --build --detach
+ 	docker compose run --rm nodejs npm ci &&\
+ 	docker compose run --rm nodejs npm run generate
+
+prod:
+	cd container &&\
+	docker compose up --build --remove-orphans --detach
 
 stop:
 	cd container && docker compose stop
@@ -32,4 +36,14 @@ ide-helper:
  	docker compose run --rm --user app php php artisan ide-helper:meta
 
 exec-nodejs:
-	cd container && docker compose exec nodejs bash
+	cd container && docker compose exec nodejs_dev bash
+
+# If the first argument is "npm"...
+ifeq (npm,$(firstword $(MAKECMDGOALS)))
+  RUN_ARGS := $(wordlist 2,$(words $(MAKECMDGOALS)),$(MAKECMDGOALS))
+  $(eval $(RUN_ARGS):;@:)
+endif
+
+# Run npm with your args
+npm:
+	cd container && docker-compose run --rm nodejs_dev npm $(RUN_ARGS)

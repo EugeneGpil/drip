@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
 
-  nodejs_build:
+  nodejs:
     build:
       context: nodejs
       args:
@@ -15,14 +15,31 @@ services:
     environment:
       - HOST=0.0.0.0
     user: "${ID_USER}:${ID_GROUP}"
+
+  nodejs_dev:
+    build:
+      context: nodejs
+      args:
+        - ID_GROUP=${ID_GROUP}
+        - ID_USER=${ID_USER}
+        - NODE_VERSION=${NODE_VERSION}
+    working_dir: /usr/share/nginx/frontend
+    volumes:
+      - ../frontend:/usr/share/nginx/frontend
+    environment:
+      - HOST=0.0.0.0
+    user: "${ID_USER}:${ID_GROUP}"
+    command: tail -F anything
+    restart: unless-stopped
     profiles:
-      - build
+      - dev
 
   nginx:
     build:
       context: nginx
       args:
         - NGINX_VERSION=${NGINX_VERSION}
+        - ENV=${NGINX_ENV}
     working_dir: /usr/share/nginx/backend
     volumes:
       - ../backend:/usr/share/nginx/backend

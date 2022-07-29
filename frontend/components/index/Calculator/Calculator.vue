@@ -41,8 +41,7 @@ export default {
   },
 
   mounted() {
-    this.$store.dispatch('Calculator/getDripRate')
-    this.$store.dispatch('Calculator/getBnbRate')
+    this.$store.dispatch('Calculator/getRates')
     this.$store.dispatch('Calculator/getDepositAmount')
     this.$store.dispatch('Calculator/getHydrationGasFee')
     this.$store.dispatch('Calculator/startUpdateRatesInterval')
