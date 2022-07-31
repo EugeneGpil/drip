@@ -1,4 +1,3 @@
-<!--suppress HtmlUnknownTarget -->
 <template>
   <div class="menu-outer-container">
     <section class="menu-container">
@@ -31,7 +30,6 @@
 <script>
 import goToTopOfElement from '../../assets/functions/goToTopOfElement';
 
-// noinspection JSUnusedGlobalSymbols
 export default {
   methods: {
     goToAbout() {
