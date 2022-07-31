@@ -2,6 +2,7 @@
   <div class="outer-wrapper">
     <div class="content-wrapper">
       <Menu/>
+      <Calculator/>
       <About/>
       <GoUp/>
     </div>
@@ -10,6 +11,7 @@
 
 <script setup>
 import Menu from '../components/index/Menu'
+import Calculator from '../components/index/Calculator/Calculator'
 import About from '../components/index/About'
 import GoUp from '../components/index/GoUp'
 </script>
