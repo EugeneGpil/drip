@@ -3,6 +3,7 @@
     <div class="content-wrapper">
       <Menu/>
       <About/>
+      <GoUp/>
     </div>
   </div>
 </template>
@@ -10,6 +11,7 @@
 <script setup>
 import Menu from '../components/index/Menu'
 import About from '../components/index/About'
+import GoUp from '../components/index/GoUp'
 </script>
 
 <style lang="scss" scoped>
