@@ -27,19 +27,11 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import goToTopOfElement from '../../assets/functions/goToTopOfElement';
 
-export default {
-  methods: {
-    goToAbout() {
-      goToTopOfElement(document.getElementById('about'))
-    },
-    goToDonation() {
-      goToTopOfElement(document.getElementById('donation'))
-    },
-  }
-}
+const goToAbout = () => goToTopOfElement(document.getElementById('about'))
+const goToDonation = () => goToTopOfElement(document.getElementById('donation'))
 </script>
 
 <style lang="scss" scoped>
