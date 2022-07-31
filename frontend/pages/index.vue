@@ -2,12 +2,14 @@
   <div class="outer-wrapper">
     <div class="content-wrapper">
       <Menu/>
+      <About/>
     </div>
   </div>
 </template>
 
 <script setup>
 import Menu from '../components/index/Menu'
+import About from '../components/index/About'
 </script>
 
 <style lang="scss" scoped>
