@@ -7,6 +7,7 @@
     "preview": "nuxt preview"
   },
   "devDependencies": {
+    "@pinia/nuxt": "^0.3.1",
     "nuxt": "3.0.0-rc.6",
     "sass": "^1.54.0"
   },
@@ -16,6 +17,7 @@
     "@fortawesome/free-regular-svg-icons": "^6.1.2",
     "@fortawesome/free-solid-svg-icons": "^6.1.2",
     "@fortawesome/vue-fontawesome": "^3.0.1",
-    "normalize.css": "^8.0.1"
+    "normalize.css": "^8.0.1",
+    "pinia": "^2.0.17"
   }
 }
