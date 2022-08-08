@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="go-up-arrow-container" @click="goUp">
+    <div class="go-up-arrow-container" @click="goToTopOfElement('body')">
       <FontAwesomeIcon class="go-up-arrow" icon="arrow-up-long"/>
       <img class="go-up-small-logo" src="/img/small_logo.webp" alt="small_logo">
     </div>
@@ -8,9 +8,9 @@
 </template>
 
 <script setup>
-import goToTopOfElement from '../../assets/functions/goToTopOfElement'
+import {useGoToTopOfElement} from '../../composables/goToTopOfElement'
 
-const goUp = () => goToTopOfElement(document.getElementsByTagName('body')[0])
+const {goToTopOfElement} = useGoToTopOfElement()
 </script>
 
 <style lang="scss" scoped>

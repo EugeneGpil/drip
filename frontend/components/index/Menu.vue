@@ -5,7 +5,7 @@
       <div class="menu-outer-item menu-outer-item1">
         <div class="menu-inner-item">
           <img class="menu-inner-item__logo" src="/img/menu_item_logo.webp" alt="menu item logo">
-          <div class="menu-inner-item__text" @click="goToDonation">
+          <div class="menu-inner-item__text" @click="goToTopOfElement('#donation')">
             <span class="nowrap">HELP THE</span>
             CREATOR
           </div>
@@ -14,7 +14,7 @@
       <div class="menu-outer-item menu-outer-item2">
         <div class="menu-inner-item">
           <img class="menu-inner-item__logo" src="/img/menu_item_logo.webp" alt="menu item logo">
-          <div class="menu-inner-item__text" @click="goToAbout">
+          <div class="menu-inner-item__text" @click="goToTopOfElement('#about')">
               <span class="nowrap">
                 ABOUT
                 <span class="menu-inner-item__bigger-text">DRIP</span>
@@ -28,10 +28,9 @@
 </template>
 
 <script setup>
-import goToTopOfElement from '../../assets/functions/goToTopOfElement';
+import {useGoToTopOfElement} from '../../composables/goToTopOfElement'
 
-const goToAbout = () => goToTopOfElement(document.getElementById('about'))
-const goToDonation = () => goToTopOfElement(document.getElementById('donation'))
+const {goToTopOfElement} = useGoToTopOfElement()
 </script>
 
 <style lang="scss" scoped>

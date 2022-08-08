@@ -2,8 +2,9 @@
   <div class="outer-wrapper">
     <div class="content-wrapper">
       <Menu/>
-      <Calculator/>
+      <!--      <Calculator/>-->
       <About/>
+      <Donation/>
       <GoUp/>
     </div>
   </div>
@@ -14,6 +15,7 @@ import Menu from '../components/index/Menu'
 import Calculator from '../components/index/Calculator/Calculator'
 import About from '../components/index/About'
 import GoUp from '../components/index/GoUp'
+import Donation from '../components/index/Donation/Donation'
 </script>
 
 <style lang="scss" scoped>
