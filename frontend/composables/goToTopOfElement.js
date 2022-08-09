@@ -5,8 +5,8 @@ export function useGoToTopOfElement() {
     goToTopOfElement: (element) => {
       const top = useGetElementByQuerySelector()
         .getElementByQuerySelector(element)?.offsetTop
-      top && window && window.scrollTo({
-        top,
+      top !== undefined && window && window.scrollTo({
+        top: top + 1,
         behavior: 'smooth',
       })
     },
