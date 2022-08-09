@@ -8,7 +8,7 @@
 </template>
 
 <script setup>
-import {useGoToTopOfElement} from '../../composables/goToTopOfElement'
+import {useGoToTopOfElement} from '~/composables/goToTopOfElement'
 
 const {goToTopOfElement} = useGoToTopOfElement()
 </script>

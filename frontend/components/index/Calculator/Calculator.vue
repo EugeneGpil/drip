@@ -7,7 +7,7 @@
 </template>
 
 <script setup>
-import HydrationGasFee from './components/HydrationGasFee'
+import HydrationGasFee from '~/components/index/Calculator/components/HydrationGasFee'
 </script>
 
 <style lang="scss" scoped>

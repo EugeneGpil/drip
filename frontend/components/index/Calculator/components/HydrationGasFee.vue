@@ -1,8 +1,8 @@
 <template>
   <MainInputBlock
-      v-model="hydrationGasFee"
-      text="HYDRATION GAS FEE"
-      currency="BNB"
+    v-model="hydrationGasFee"
+    text="HYDRATION GAS FEE"
+    currency="BNB"
   >
     <div class="modal-headline">YOU MAY ADJUST THIS VALUE ONLY ONCE</div>
     <div class="modal-headline">IT WILL BE SAVED IN YOUR BROWSER</div>
@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import MainInputBlock from '../../../index/Calculator/shared/MainInputBlock'
+import MainInputBlock from '~/components/index/Calculator/shared/MainInputBlock'
 
 export default {
   components: {
