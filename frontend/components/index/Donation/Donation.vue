@@ -2,38 +2,24 @@
   <div id="donation" class="content-outer-container">
     <section class="content-inner-container">
       <div class="text-container">
-        <!--        <Headline/>-->
-        <!--        <Description/>-->
+        <Headline/>
+        <Description/>
         <div class="data-field-container">
           <!--          <CopyButton/>-->
           <!--          <Wallet/>-->
         </div>
-        <!--        <BuddyAddress/>-->
+        <BuddyAddress/>
       </div>
     </section>
-    <!--    <Contacts/>-->
+    <Contacts/>
   </div>
 </template>
 
-<script>
-// import Headline from '../../index/Donation/components/Headline'
-// import Description from '../../index/Donation/components/Description'
-// import CopyButton from '../../index/Donation/components/CopyButton'
-// import Wallet from '../../index/Donation/components/Wallet'
-// import BuddyAddress from '../../index/Donation/components/BuddyAddress'
-// import Contacts from '../../index/Donation/components/Contacts'
-
-// noinspection JSUnusedGlobalSymbols
-export default {
-  // components: {
-  //   Contacts,
-  //   BuddyAddress,
-  //   Wallet,
-  //   Description,
-  //   Headline,
-  //   CopyButton,
-  // },
-}
+<script setup>
+import Headline from '~/components/index/Donation/components/Headline'
+import Description from '~/components/index/Donation/components/Description'
+import BuddyAddress from '~/components/index/Donation/components/BuddyAddress'
+import Contacts from '~/components/index/Donation/components/Contacts'
 </script>
 
 <style lang="scss" scoped>
