@@ -13,27 +13,22 @@
   </div>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      isCopying: false,
-    }
-  },
+<script setup>
+import {ref} from 'vue'
+import {useDonationStore} from '~/store/Donation'
 
-  methods: {
-    copyWallet() {
-      // const wallet = this.$store.state.Donation.wallet
-      const wallet = '0x13A9C362ed32297ff5f7D6C5cF97b0A8f242AbfD'
-      navigator.clipboard.writeText(wallet)
+const isCopying = ref(false)
+const donationStore = useDonationStore()
+const {wallet} = donationStore
 
-      this.isCopying = true
+const copyWallet = () => {
+  navigator.clipboard.writeText(wallet)
 
-      setTimeout(() => {
-        this.isCopying = false
-      }, 1000)
-    },
-  },
+  isCopying.value = true
+
+  setTimeout(() => {
+    isCopying.value = false
+  }, 1000)
 }
 </script>
 
