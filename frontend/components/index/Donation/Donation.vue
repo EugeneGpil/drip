@@ -5,8 +5,8 @@
         <Headline/>
         <Description/>
         <div class="data-field-container">
-          <!--          <CopyButton/>-->
-          <!--          <Wallet/>-->
+          <CopyButton/>
+          <Wallet/>
         </div>
         <BuddyAddress/>
       </div>
@@ -20,6 +20,8 @@ import Headline from '~/components/index/Donation/components/Headline'
 import Description from '~/components/index/Donation/components/Description'
 import BuddyAddress from '~/components/index/Donation/components/BuddyAddress'
 import Contacts from '~/components/index/Donation/components/Contacts'
+import Wallet from '~/components/index/Donation/components/Wallet'
+import CopyButton from '~/components/index/Donation/components/CopyButton'
 </script>
 
 <style lang="scss" scoped>
