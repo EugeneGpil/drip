@@ -18,8 +18,7 @@ import {ref} from 'vue'
 import {useDonationStore} from '~/store/Donation'
 
 const isCopying = ref(false)
-const donationStore = useDonationStore()
-const {wallet} = donationStore
+const {wallet} = useDonationStore()
 
 const copyWallet = () => {
   navigator.clipboard.writeText(wallet)

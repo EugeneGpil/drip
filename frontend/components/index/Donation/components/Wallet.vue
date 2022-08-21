@@ -11,8 +11,7 @@
 <script setup>
 import {useDonationStore} from '~/store/Donation'
 
-const donationStore = useDonationStore()
-const {wallet} = donationStore
+const {wallet} = useDonationStore()
 </script>
 
 <style lang="scss" scoped>
