@@ -4,6 +4,7 @@
       <Menu/>
       <!--      <Calculator/>-->
       <About/>
+      <Instruction/>
       <Donation/>
       <GoUp/>
     </div>
@@ -16,6 +17,7 @@ import Calculator from '../components/index/Calculator/Calculator'
 import About from '../components/index/About'
 import GoUp from '../components/index/GoUp'
 import Donation from '../components/index/Donation/Donation'
+import Instruction from '~/components/index/Instruction/Instruction'
 </script>
 
 <style lang="scss" scoped>
