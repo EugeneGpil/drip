@@ -1,9 +1,7 @@
 <template>
-  <div>
-    <div class="go-up-arrow-container" @click="goToTopOfElement('body')">
-      <FontAwesomeIcon class="go-up-arrow" icon="arrow-up-long"/>
-      <img class="go-up-small-logo" src="/img/small_logo.webp" alt="small_logo">
-    </div>
+  <div class="go-up-arrow-container" @click="goToTopOfElement('body')">
+    <FontAwesomeIcon class="go-up-arrow" icon="arrow-up-long"/>
+    <img class="go-up-small-logo" src="/img/small_logo.webp" alt="small_logo">
   </div>
 </template>
 
