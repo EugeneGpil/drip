@@ -9,23 +9,14 @@
   </MainInputBlock>
 </template>
 
-<script>
+<script setup>
+import {computed} from 'vue'
+import {useCalculatorStore} from '~/store/Calculator'
+const calculatorStore = useCalculatorStore()
+const hydrationGasFee = computed({
+  get: () => calculatorStore.hydrationGasFee,
+  set: calculatorStore.setHydrationGasFee,
+})
+
 import MainInputBlock from '~/components/index/Calculator/shared/MainInputBlock'
-
-export default {
-  components: {
-    MainInputBlock,
-  },
-
-  computed: {
-    hydrationGasFee: {
-      get() {
-        return this.$store.state.Calculator.hydrationGasFee
-      },
-      set(hydrationGasFee) {
-        this.$store.dispatch('Calculator/setHydrationGasFee', hydrationGasFee)
-      },
-    },
-  },
-}
 </script>

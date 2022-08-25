@@ -9,7 +9,6 @@ const actions = {}
 const getters = {}
 
 export const useDonationStore = defineStore('donationStore', {
-  namespaced: true,
   state,
   actions,
   getters,

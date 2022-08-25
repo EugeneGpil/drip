@@ -1,11 +1,7 @@
 <template>
   <div class="content-main-block content-inner-container__block">
     <h2
-        class="
-        content-main-block__headline
-        content-main-headline
-        content-main-headline-with-info
-      "
+        class="content-main-block__headline content-main-headline content-main-headline-with-info"
         @click="isModalVisible = true"
     >
       {{ text }}
@@ -16,7 +12,10 @@
           ref="input"
           class="main-value-input"
       >
-      <div class="main-value-underline"></div>
+      <div class="main-value-underline-container">
+        <div class="main-value-underline"></div>
+        <div class="main-value-currency">{{ currency }}</div>
+      </div>
     </div>
     <Modal v-if="isModalVisible" @close="isModalVisible = false">
       <slot/>
@@ -25,12 +24,6 @@
 </template>
 
 <script setup>
-import {ref, nextTick} from 'vue'
-
-import Modal from '../../../layout/Modal'
-
-import stringToFloat from '../../../../assets/converters/stringToFloat'
-
 const props = defineProps({
   text: {
     type: String,
@@ -44,23 +37,40 @@ const props = defineProps({
     type: Number,
     required: true,
   },
+  'onUpdate:modelValue': {},
 })
 
+import {ref} from 'vue'
 const isModalVisible = ref(false)
 
 const emit = defineEmits(['input'])
-
-const inputValue = $computed({
-  async get() {
-    await nextTick()
-    const valueStr = props.value.toString()
-    const length = valueStr.length
-    const input = ref()
-    input?.focus()
-    input?.setSelectionRange(length, length)
-  },
-  set(inputValue) {
-    emit('update:modelValue', stringToFloat(inputValue))
-  },
+import stringToFloat from '~/assets/converters/stringToFloat'
+import {computed} from 'vue'
+const inputValue = computed({
+  get: () => stringToFloat(props.modelValue),
+  set: inputValue => emit('update:modelValue', stringToFloat(inputValue)),
 })
+
+import Modal from '~/components/layout/Modal'
 </script>
+
+<style scoped lang="scss">
+.main-value-underline-container {
+  position: relative
+}
+
+.main-value-currency {
+  top: 1px;
+  right: 2px;
+  position: absolute;
+  font-size: 8px;
+  font-style: italic;
+  font-weight: bold;
+  color: dimgray;
+  text-shadow: none;
+
+  @media (min-width: 450px) {
+    font-size: 10px;
+  }
+}
+</style>

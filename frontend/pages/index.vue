@@ -2,7 +2,7 @@
   <div class="outer-wrapper">
     <div class="content-wrapper">
       <Menu/>
-      <!--      <Calculator/>-->
+      <Calculator/>
       <About/>
       <Instruction/>
       <Donation/>
