@@ -287,3 +287,22 @@ p {
   font-size: 25px;
   color: #356;
 }
+
+.main-value-underline-container {
+  position: relative
+}
+
+.main-value-currency {
+  top: 1px;
+  right: 2px;
+  position: absolute;
+  font-size: 8px;
+  font-style: italic;
+  font-weight: bold;
+  color: dimgray;
+  text-shadow: none;
+
+  @media (min-width: 450px) {
+    font-size: 10px;
+  }
+}
