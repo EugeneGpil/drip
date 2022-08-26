@@ -1,16 +1,15 @@
-import actions from '~/store/Calculator/actions'
-
 const state = () => ({
   hydrationGasFee: 0.0025,
   bnbRate: 400,
   wasBnbRateEdited: false,
   dripRate: 10,
   wasDripRateEdited: false,
+  depositAmount: 10,
 })
 
-const getters = {}
-
 import {defineStore} from 'pinia'
+import actions from '~/store/Calculator/actions'
+import getters from '~/store/Calculator/getters'
 
 export const useCalculatorStore = defineStore('calculatorStore', {
   state,

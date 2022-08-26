@@ -33,6 +33,7 @@ const props = defineProps({
     type: Number,
     required: true,
   },
+  'onUpdate:modelValue': {},
 })
 
 const emit = defineEmits(['input'])

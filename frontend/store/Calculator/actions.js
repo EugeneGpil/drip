@@ -12,4 +12,9 @@ export default {
     this.dripRate = dripRate
     this.wasDripRateEdited = true
   },
+
+  setDepositAmount(depositAmount) {
+    window?.localStorage.setItem('deposit_amount', depositAmount)
+    this.depositAmount = depositAmount
+  },
 }
