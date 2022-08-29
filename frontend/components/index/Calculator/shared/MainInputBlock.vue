@@ -45,7 +45,7 @@ import {ref} from 'vue'
 const isModalVisible = ref(false)
 
 const emit = defineEmits(['input'])
-import stringToFloat from '~/assets/converters/stringToFloat'
+import stringToFloat from '~/utils/converters/stringToFloat'
 import {computed} from 'vue'
 
 const inputValue = computed({

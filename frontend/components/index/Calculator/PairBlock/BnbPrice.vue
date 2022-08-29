@@ -21,7 +21,7 @@ import {computed} from 'vue'
 import {useCalculatorStore} from '~/store/Calculator'
 
 const calculatorStore = useCalculatorStore()
-import stringToFloat from '~/assets/converters/stringToFloat'
+import stringToFloat from '~/utils/converters/stringToFloat'
 
 const bnbRate = computed({
   get: () => calculatorStore.bnbRate,

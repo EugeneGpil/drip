@@ -16,14 +16,16 @@
 import HydrationGasFee from '~/components/index/Calculator/components/HydrationGasFee'
 import PairBlock from '~/components/index/Calculator/components/PairBlock'
 import DepositAmount from '~/components/index/Calculator/components/DepositAmount'
-import MainResultBlock from '../../index/shared/MainResultBlock'
+import MainResultBlock from '~/components/index/shared/MainResultBlock'
 
 import {useCalculatorStore} from '~/store/Calculator'
 
 /**
- * @type {Store<"calculatorStore", {depositAmount: number, hydrationGasFee: number, bnbRate: number, wasBnbRateEdited: boolean, wasDripRateEdited: boolean, dripRate: number}, {amountToHydrate(*): *}, {setBnbRate(*): void, setDepositAmount(*): void, setDripRate(*): void, setHydrationGasFee(*): void}>}
+ * @type {Store<"calculatorStore", {depositAmount: number, hydrationGasFee: number, bnbRate: number, wasBnbRateEdited: boolean, wasDripRateEdited: boolean, dripRate: number}, {amountToHydrate(*): *}, {getBnbRate(): Promise<void>, setBnbRate(*): void, setDepositAmount(*): void, setDripRate(*): void, getRates(): Promise<void>, setHydrationGasFee(*): void, getDripRate(): Promise<void>}>}
  */
 const calculatorStore = useCalculatorStore()
+
+calculatorStore.getRates()
 </script>
 
 <style lang="scss" scoped>

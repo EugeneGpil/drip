@@ -22,7 +22,7 @@
 
 <script setup>
 import Modal from '~/components/layout/Modal'
-import stringToFloat from '~/assets/converters/stringToFloat'
+import stringToFloat from '~/utils/converters/stringToFloat'
 
 const props = defineProps({
   text: {
