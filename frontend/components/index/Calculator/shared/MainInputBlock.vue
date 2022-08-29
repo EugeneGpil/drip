@@ -34,7 +34,7 @@ const props = defineProps({
     required: true,
   },
   modelValue: {
-    type: Number,
+    type: String,
     required: true,
   },
   'onUpdate:modelValue': {},
@@ -45,12 +45,12 @@ import {ref} from 'vue'
 const isModalVisible = ref(false)
 
 const emit = defineEmits(['input'])
-import stringToFloat from '~/utils/converters/stringToFloat'
+import toFloatString from '~/utils/converters/toFloatString'
 import {computed} from 'vue'
 
 const inputValue = computed({
-  get: () => stringToFloat(props.modelValue),
-  set: inputValue => emit('update:modelValue', stringToFloat(inputValue)),
+  get: () => props.modelValue,
+  set: inputValue => emit('update:modelValue', toFloatString(inputValue)),
 })
 
 import Modal from '~/components/layout/Modal'

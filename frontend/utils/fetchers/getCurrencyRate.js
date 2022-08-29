@@ -8,7 +8,5 @@ export default async (currencyFrom, currencyTo, setCallback) => {
       currency_to_name: currencyTo,
     },
   })
-
-  console.log('res', res)
   setCallback(res.rate)
 }

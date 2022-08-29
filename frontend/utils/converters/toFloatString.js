@@ -1,9 +1,14 @@
 export default (value) => {
-  if (!value?.replace) {
-    return value
+  let value2 = value
+  if (value2?.toString) {
+    value2 = value2.toString()
   }
 
-  let onlyNumbersAndDots = value.replace(/[^\d.]/g, '')
+  if (!value2?.replace) {
+    return value2
+  }
+
+  let onlyNumbersAndDots = value2.replace(/[^\d.]/g, '')
 
   if (onlyNumbersAndDots[0] === '.' || onlyNumbersAndDots === '') {
     onlyNumbersAndDots = `0${onlyNumbersAndDots}`
@@ -12,6 +17,5 @@ export default (value) => {
   const split = onlyNumbersAndDots.split('.')
   const beforeDot = split.shift()
   const afterDot = split.join('')
-  const parsed = `${beforeDot}.${afterDot}`
-  return parseFloat(parsed)
+  return `${beforeDot}.${afterDot}`
 }

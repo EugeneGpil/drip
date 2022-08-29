@@ -22,7 +22,7 @@
 
 <script setup>
 import Modal from '~/components/layout/Modal'
-import stringToFloat from '~/utils/converters/stringToFloat'
+import toFloatString from '~/utils/converters/toFloatString'
 
 const props = defineProps({
   text: {
@@ -30,7 +30,7 @@ const props = defineProps({
     required: true,
   },
   modelValue: {
-    type: Number,
+    type: String,
     required: true,
   },
   'onUpdate:modelValue': {},
@@ -41,7 +41,7 @@ import {computed} from 'vue'
 
 const inputValue = computed({
   get: () => props.modelValue,
-  set: (inputValue) => emit('update:modelValue', stringToFloat(inputValue)),
+  set: (inputValue) => emit('update:modelValue', toFloatString(inputValue)),
 })
 
 import {ref} from 'vue'

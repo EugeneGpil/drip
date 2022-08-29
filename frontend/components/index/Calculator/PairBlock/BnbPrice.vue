@@ -21,10 +21,10 @@ import {computed} from 'vue'
 import {useCalculatorStore} from '~/store/Calculator'
 
 const calculatorStore = useCalculatorStore()
-import stringToFloat from '~/utils/converters/stringToFloat'
+import toFloatString from '~/utils/converters/toFloatString'
 
 const bnbRate = computed({
   get: () => calculatorStore.bnbRate,
-  set: (bnbRate) => calculatorStore.setBnbRate(stringToFloat(bnbRate))
+  set: (bnbRate) => calculatorStore.setBnbRate(toFloatString(bnbRate))
 })
 </script>

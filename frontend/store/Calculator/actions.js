@@ -1,4 +1,5 @@
 import getCurrencyRate from '~/utils/fetchers/getCurrencyRate'
+import toFloatString from '~/utils/converters/toFloatString'
 
 export default {
   setHydrationGasFee(hydrationGasFee) {
@@ -22,13 +23,13 @@ export default {
 
   async getBnbRate() {
     await getCurrencyRate.bind(this)('usd', 'bnb', (rate) => {
-      this.bnbRate = rate
+      this.bnbRate = toFloatString(rate)
     })
   },
 
   async getDripRate() {
     await getCurrencyRate.bind(this)('usd', 'drip', (rate) => {
-      this.dripRate = rate
+      this.dripRate = toFloatString(rate)
     })
   },
 
