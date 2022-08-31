@@ -7,9 +7,10 @@
 </template>
 
 <script setup>
+const emit = defineEmits(['close'])
 const close = (e) => {
   if (e.target.classList.contains('modal-container')) {
-    this.$emit('close')
+    emit('close')
   }
 }
 </script>
