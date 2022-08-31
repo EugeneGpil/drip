@@ -11,25 +11,36 @@ const getFullHoursToHydrate = (depositAmount, amountToHydrate) => {
   return Math.floor(hoursToHydrateFloat)
 }
 
+import {useCalculatorStore} from '~/store/Calculator'
+
 export default {
-  daysToHydrate(state, getters, rootState, rootGetters) {
-    const depositAmount = rootState.Calculator.depositAmount
-    const amountToHydrate = rootGetters['Calculator/amountToHydrate']
+  daysToHydrate() {
+    const calculatorStore = useCalculatorStore()
+
+    const depositAmount = calculatorStore.depositAmount
+    const amountToHydrate = calculatorStore.amountToHydrate
     const daysToHydrateFloat = getFullHoursToHydrate(depositAmount, amountToHydrate) / 24
+
     return Math.floor(daysToHydrateFloat)
   },
 
-  hoursToHydrate(state, getters, rootState, rootGetters) {
-    const depositAmount = rootState.Calculator.depositAmount
-    const amountToHydrate = rootGetters['Calculator/amountToHydrate']
-    return getFullHoursToHydrate(depositAmount, amountToHydrate) - getters.daysToHydrate * 24
+  hoursToHydrate() {
+    const calculatorStore = useCalculatorStore()
+
+    const depositAmount = calculatorStore.depositAmount
+    const amountToHydrate = calculatorStore.amountToHydrate
+
+    return getFullHoursToHydrate(depositAmount, amountToHydrate) - this.daysToHydrate * 24
   },
 
-  minutesToHydrate(state, getters, rootState, rootGetters) {
-    const depositAmount = rootState.Calculator.depositAmount
-    const amountToHydrate = rootGetters['Calculator/amountToHydrate']
+  minutesToHydrate() {
+    const calculatorStore = useCalculatorStore()
+
+    const depositAmount = calculatorStore.depositAmount
+    const amountToHydrate = calculatorStore.amountToHydrate
     const fullMinutesToHydrate = getFullMinutesToHydrate(depositAmount, amountToHydrate)
     const fullHoursToHydrate = getFullHoursToHydrate(depositAmount, amountToHydrate)
+
     return fullMinutesToHydrate - fullHoursToHydrate * 60
   },
 }

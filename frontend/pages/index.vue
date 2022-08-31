@@ -3,6 +3,7 @@
     <div class="content-wrapper">
       <Menu/>
       <Calculator/>
+      <IntervalAndSavings/>
       <About/>
       <Instruction/>
       <Donation/>
@@ -14,6 +15,7 @@
 <script setup>
 import Menu from '../components/index/Menu'
 import Calculator from '../components/index/Calculator/Calculator'
+import IntervalAndSavings from '../components/index/IntervalAndSavings/IntervalAndSavings'
 import About from '../components/index/About'
 import GoUp from '../components/index/GoUp'
 import Donation from '../components/index/Donation/Donation'
