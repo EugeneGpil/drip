@@ -25,7 +25,12 @@ import {useCalculatorStore} from '~/store/Calculator'
  */
 const calculatorStore = useCalculatorStore()
 
-calculatorStore.getRates()
+await calculatorStore.getRates()
+
+import {onMounted} from 'vue'
+onMounted(() => {
+  calculatorStore.getRates()
+})
 </script>
 
 <style lang="scss" scoped>
