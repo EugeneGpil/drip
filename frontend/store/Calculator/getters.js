@@ -6,6 +6,7 @@ export default {
     const usdToHydrate = hydrationGasFeeInUsd * coefficient
     const dripToHydrate = usdToHydrate / state.dripRate
     const intDripToHydrateX1000 = Math.round(dripToHydrate * 1000)
+
     return intDripToHydrateX1000 / 1000
   },
 }

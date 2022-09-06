@@ -21,7 +21,7 @@ import MainResultBlock from '~/components/index/shared/MainResultBlock'
 import {useCalculatorStore} from '~/store/Calculator'
 
 /**
- * @type {Store<"calculatorStore", {depositAmount: number, hydrationGasFee: number, bnbRate: number, wasBnbRateEdited: boolean, wasDripRateEdited: boolean, dripRate: number}, {amountToHydrate(*): *}, {getBnbRate(): Promise<void>, setBnbRate(*): void, setDepositAmount(*): void, setDripRate(*): void, getRates(): Promise<void>, setHydrationGasFee(*): void, getDripRate(): Promise<void>}>}
+ * @type {Store<"calculatorStore", {depositAmount: string, hydrationGasFee: string, bnbRate: string, wasBnbRateEdited: boolean, wasDripRateEdited: boolean, dripRate: string}, {amountToHydrate(*): *}, {getBnbRate(): Promise<void>, getHydrationGasFee(): void, setBnbRate(*): void, getDepositAmount(): void, setDepositAmount(*): void, setDripRate(*): void, getRates(): Promise<void>, getDripRate(): Promise<void>, setHydrationGasFee(*): void}>}
  */
 const calculatorStore = useCalculatorStore()
 
@@ -30,6 +30,8 @@ await calculatorStore.getRates()
 import {onMounted} from 'vue'
 onMounted(() => {
   calculatorStore.getRates()
+  calculatorStore.getDepositAmount()
+  calculatorStore.getHydrationGasFee()
 })
 </script>
 
