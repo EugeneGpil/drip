@@ -3,8 +3,8 @@
     <section class="content-inner-container">
       <IntervalToHydrate/>
       <div class="additional-info-container">
-        <!--        <SavedInUsd/>-->
-        <!--        <SavedInDrip/>-->
+        <SavedInUsd/>
+        <SavedInDrip/>
       </div>
     </section>
   </div>
@@ -12,8 +12,8 @@
 
 <script setup>
 import IntervalToHydrate from '~/components/index/IntervalAndSavings/components/IntervalToHydrate'
-// import SavedInUsd from '../../index/IntervalAndSavings/components/SavedInUsd'
-// import SavedInDrip from '../../index/IntervalAndSavings/components/SavedInDrip'
+import SavedInUsd from '~/components/index/IntervalAndSavings/components/SavedInUsd'
+import SavedInDrip from '~/components/index/IntervalAndSavings/components/SavedInDrip'
 </script>
 
 <style lang="scss" scoped>
