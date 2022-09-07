@@ -3,6 +3,8 @@ import toFloatString from '~/utils/converters/toFloatString'
 import getFromLocalStorage from '~/utils/localStorage/getFromLocalStorage'
 import setWithLocalStorage from '~/utils/localStorage/setWithLocalStorage'
 
+let updateRateInterval
+
 export default {
   setBnbRate(bnbRate) {
     this.bnbRate = bnbRate
@@ -55,5 +57,20 @@ export default {
     getFromLocalStorage('hydration_gas_fee', (hydrationGasFee) =>
       this.hydrationGasFee = hydrationGasFee
     )
-  }
+  },
+
+  startUpdateRatesInterval() {
+    updateRateInterval = setInterval(() => {
+      if (!this.wasDripRateEdited) {
+        this.getDripRate()
+      }
+      if (!this.wasBnbRateEdited) {
+        this.getBnbRate()
+      }
+    }, 1000 * 60 * 5)
+  },
+
+  clearUpdateRatesInterval() {
+    clearInterval(updateRateInterval)
+  },
 }

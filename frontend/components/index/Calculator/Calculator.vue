@@ -21,17 +21,23 @@ import MainResultBlock from '~/components/index/shared/MainResultBlock'
 import {useCalculatorStore} from '~/store/Calculator'
 
 /**
- * @type {Store<"calculatorStore", {depositAmount: string, hydrationGasFee: string, bnbRate: string, wasBnbRateEdited: boolean, wasDripRateEdited: boolean, dripRate: string}, {amountToHydrate(*): *}, {getBnbRate(): Promise<void>, getHydrationGasFee(): void, setBnbRate(*): void, getDepositAmount(): void, setDepositAmount(*): void, setDripRate(*): void, getRates(): Promise<void>, getDripRate(): Promise<void>, setHydrationGasFee(*): void}>}
+ * @type {Store<"calculatorStore", {depositAmount: string, hydrationGasFee: string, bnbRate: string, wasBnbRateEdited: boolean, wasDripRateEdited: boolean, dripRate: string}, {amountToHydrate(*): *}, {getBnbRate(): Promise<void>, getHydrationGasFee(): void, setBnbRate(*): void, getDepositAmount(): void, setDepositAmount(*): void, startUpdateRatesInterval(): void, setDripRate(*): void, getRates(): Promise<void>, clearUpdateRatesInterval(): void, getDripRate(): Promise<void>, setHydrationGasFee(*): void}>}
  */
 const calculatorStore = useCalculatorStore()
 
 await calculatorStore.getRates()
 
-import {onMounted} from 'vue'
+import {onMounted, onUnmounted} from 'vue'
+
 onMounted(() => {
   calculatorStore.getRates()
   calculatorStore.getDepositAmount()
   calculatorStore.getHydrationGasFee()
+  calculatorStore.startUpdateRatesInterval()
+})
+
+onUnmounted(() => {
+  calculatorStore.clearUpdateRatesInterval()
 })
 </script>
 
