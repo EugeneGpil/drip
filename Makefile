@@ -5,7 +5,7 @@ release:
 	cd container &&\
 	docker compose build &&\
 	docker compose stop &&\
-	docker compose up --build --remove-orphans --detach &&\
+	docker compose --profile prod up --build --remove-orphans --detach &&\
  	docker compose run --rm --user app php composer install --no-interaction &&\
  	docker compose run --rm --user app php php artisan migrate --force --no-interaction &&\
  	docker compose run --rm nodejs npm ci &&\
@@ -13,7 +13,7 @@ release:
 
 prod:
 	cd container &&\
-	docker compose up --build --remove-orphans --detach
+	docker compose --profile prod up --build --remove-orphans --detach
 
 stop:
 	cd container && docker compose stop

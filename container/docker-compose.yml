@@ -36,12 +36,11 @@ services:
     profiles:
       - dev
 
-  nginx:
+  nginx_dev:
     build:
-      context: nginx
+      context: nginx_dev
       args:
         - NGINX_VERSION=${NGINX_VERSION}
-        - ENV=${NGINX_ENV}
     working_dir: /usr/share/nginx/backend
     volumes:
       - ../backend:/usr/share/nginx/backend
@@ -49,6 +48,23 @@ services:
     restart: unless-stopped
     ports:
       - ${PORT_NGINX}:80
+    profiles:
+      - dev
+
+  nginx_prod:
+    build:
+      context: nginx_prod
+      args:
+        - NGINX_VERSION=${NGINX_VERSION}
+    working_dir: /usr/share/nginx/backend
+    volumes:
+      - ../backend:/usr/share/nginx/backend
+      - ../frontend:/usr/share/nginx/frontend
+    restart: unless-stopped
+    ports:
+      - ${PORT_NGINX}:80
+    profiles:
+      - prod
 
   php:
     build:
