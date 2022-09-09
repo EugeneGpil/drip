@@ -1,0 +1,59 @@
+{
+  "node_modules/nuxt/dist/app/entry.mjs": {
+    "file": "entry-dcb12f4d.mjs",
+    "src": "node_modules/nuxt/dist/app/entry.mjs",
+    "isEntry": true,
+    "dynamicImports": [
+      "pages/index.vue",
+      "virtual:nuxt:/usr/share/nginx/frontend/.nuxt/error-component.mjs"
+    ],
+    "css": [
+      "entry.16103830.css"
+    ],
+    "assets": [
+      "Aldrich-Regular.4441ed91.ttf"
+    ]
+  },
+  "virtual:nuxt:/usr/share/nginx/frontend/.nuxt/error-component.mjs": {
+    "file": "error-component-c9eff6d5.mjs",
+    "src": "virtual:nuxt:/usr/share/nginx/frontend/.nuxt/error-component.mjs",
+    "isDynamicEntry": true,
+    "imports": [
+      "node_modules/nuxt/dist/app/entry.mjs"
+    ],
+    "dynamicImports": [
+      "node_modules/@nuxt/ui-templates/dist/templates/error-404.vue",
+      "node_modules/@nuxt/ui-templates/dist/templates/error-500.vue"
+    ]
+  },
+  "pages/index.vue": {
+    "file": "index-cfaa188f.mjs",
+    "src": "pages/index.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "node_modules/nuxt/dist/app/entry.mjs"
+    ]
+  },
+  "node_modules/@nuxt/ui-templates/dist/templates/error-404.vue": {
+    "file": "error-404-4c25810e.mjs",
+    "src": "node_modules/@nuxt/ui-templates/dist/templates/error-404.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "node_modules/nuxt/dist/app/entry.mjs"
+    ],
+    "css": [
+      "error-404.314f7075.css"
+    ]
+  },
+  "node_modules/@nuxt/ui-templates/dist/templates/error-500.vue": {
+    "file": "error-500-41213687.mjs",
+    "src": "node_modules/@nuxt/ui-templates/dist/templates/error-500.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "node_modules/nuxt/dist/app/entry.mjs"
+    ],
+    "css": [
+      "error-500.4e3461e5.css"
+    ]
+  }
+}
