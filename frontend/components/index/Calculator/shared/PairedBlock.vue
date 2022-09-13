@@ -33,12 +33,11 @@ const props = defineProps({
     type: String,
     required: true,
   },
-  'onUpdate:modelValue': {},
 })
 
-const emit = defineEmits(['input'])
 import {computed} from 'vue'
 
+const emit = defineEmits(['update:modelValue'])
 const inputValue = computed({
   get: () => props.modelValue,
   set: (inputValue) => emit('update:modelValue', toFloatString(inputValue)),

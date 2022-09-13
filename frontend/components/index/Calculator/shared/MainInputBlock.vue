@@ -37,17 +37,16 @@ const props = defineProps({
     type: String,
     required: true,
   },
-  'onUpdate:modelValue': {},
 })
 
 import {ref} from 'vue'
 
 const isModalVisible = ref(false)
 
-const emit = defineEmits(['input'])
 import toFloatString from '~/utils/converters/toFloatString'
 import {computed} from 'vue'
 
+const emit = defineEmits(['update:modelValue'])
 const inputValue = computed({
   get: () => props.modelValue,
   set: inputValue => emit('update:modelValue', toFloatString(inputValue)),

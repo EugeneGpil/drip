@@ -2,6 +2,7 @@ dev:
 	./shell/dev.sh
 
 release:
+	git pull &&\
 	cd container &&\
 	docker compose build &&\
 	docker compose stop &&\
