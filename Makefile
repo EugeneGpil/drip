@@ -17,7 +17,9 @@ prod:
 	docker compose --profile prod up --build --remove-orphans --detach
 
 stop:
-	cd container && docker compose stop
+	cd container &&\
+	docker compose --profile dev stop &&\
+	docker compose --profile prod stop
 
 install-net-tools:
 	sudo apt-get install net-tools -y
