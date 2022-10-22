@@ -8,8 +8,8 @@
     </h2>
     <div class="main-value-container">
       <input
-        v-model="inputValue"
-        ref="input"
+        v-model.number="inputValue"
+        type="number"
         class="main-value-input"
       >
       <div class="main-value-underline-container">
@@ -25,31 +25,21 @@
 
 <script setup>
 const props = defineProps({
-  text: {
-    type: String,
-    required: true,
-  },
-  currency: {
-    type: String,
-    required: true,
-  },
-  modelValue: {
-    type: String,
-    required: true,
-  },
+  text: {type: String, required: true},
+  currency: {type: String, required: true},
+  modelValue: {type: Number, required: true},
 })
 
 import {ref} from 'vue'
 
 const isModalVisible = ref(false)
 
-import toFloatString from '~/utils/converters/toFloatString'
 import {computed} from 'vue'
 
 const emit = defineEmits(['update:modelValue'])
 const inputValue = computed({
   get: () => props.modelValue,
-  set: inputValue => emit('update:modelValue', toFloatString(inputValue)),
+  set: inputValue => emit('update:modelValue', inputValue),
 })
 
 import Modal from '~/components/layout/Modal'

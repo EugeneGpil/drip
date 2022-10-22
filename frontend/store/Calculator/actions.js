@@ -37,7 +37,7 @@ export default {
 
   getDepositAmount() {
     getFromLocalStorage('deposit_amount', (depositAmount) => {
-      this.depositAmount = depositAmount
+      this.depositAmount = parseFloat(depositAmount)
     })
   },
 
@@ -55,7 +55,7 @@ export default {
 
   getHydrationGasFee() {
     getFromLocalStorage('hydration_gas_fee', (hydrationGasFee) =>
-      this.hydrationGasFee = hydrationGasFee
+      this.hydrationGasFee = parseFloat(hydrationGasFee)
     )
   },
 
