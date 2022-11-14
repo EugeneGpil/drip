@@ -39,7 +39,7 @@ import {computed} from 'vue'
 const emit = defineEmits(['update:modelValue'])
 const inputValue = computed({
   get: () => props.modelValue,
-  set: inputValue => emit('update:modelValue', inputValue),
+  set: inputValue => emit('update:modelValue', inputValue || 0),
 })
 
 import Modal from '~/components/layout/Modal'
