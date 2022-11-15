@@ -2,7 +2,7 @@ const getFullMinutesToHydrate = (depositAmount, amountToHydrate) => {
   const dripPerDay = depositAmount / 100
   const dripPerHour = dripPerDay / 24
   const dripPerMinute = dripPerHour / 60
-  const minutesToHydrateFloat = amountToHydrate / dripPerMinute
+  const minutesToHydrateFloat = dripPerMinute === 0 ? 0 : amountToHydrate / dripPerMinute
   return Math.floor(minutesToHydrateFloat)
 }
 
