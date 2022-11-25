@@ -27,8 +27,8 @@ class DripSirdar
 
         if (
             $lastPrice === null
-            || !isset($lastPrice['value'])
-            || !$lastPrice['value']
+            || !isset($lastPrice[1])
+            || !$lastPrice[1]
         ) {
             $responseStr = json_encode($response);
             $methodName = __METHOD__;
@@ -43,6 +43,6 @@ class DripSirdar
             return null;
         }
 
-        return $lastPrice['value'];
+        return $lastPrice[1];
     }
 }
