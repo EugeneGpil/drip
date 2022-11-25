@@ -25,8 +25,6 @@ import {useCalculatorStore} from '~/store/Calculator'
  */
 const calculatorStore = useCalculatorStore()
 
-await calculatorStore.getRates()
-
 import {onMounted, onUnmounted} from 'vue'
 
 onMounted(() => {
