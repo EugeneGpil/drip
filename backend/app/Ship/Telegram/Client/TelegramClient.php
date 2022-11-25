@@ -12,6 +12,8 @@ class TelegramClient
     private Client $client;
     private string $botToken;
 
+    private const MAX_MESSAGE_LENGTH = 4096;
+
     public function __construct()
     {
         $this->client = new Client([
@@ -27,7 +29,7 @@ class TelegramClient
         $params = [
             'query' => [
                 'chat_id' => $chatId,
-                'text' => $text,
+                'text' => $this->getCutText($text),
             ],
         ];
         $classMethod = __METHOD__;
@@ -71,5 +73,16 @@ class TelegramClient
         }
 
         return true;
+    }
+
+    private function getCutText(string $text): string
+    {
+        if (strlen($text) <= self::MAX_MESSAGE_LENGTH) {
+            return $text;
+        }
+
+        Log::info("TELEGRAM_FULL_TEXT:\n$text");
+
+        return substr($text, 0, self::MAX_MESSAGE_LENGTH);
     }
 }
